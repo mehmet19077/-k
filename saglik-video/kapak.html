@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url(assets/fonts/poppins-latin-600-normal.woff2); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url(assets/fonts/poppins-latin-ext-600-normal.woff2); unicode-range: U+0100-024F; }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url(assets/fonts/poppins-latin-700-normal.woff2); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url(assets/fonts/poppins-latin-ext-700-normal.woff2); unicode-range: U+0100-024F; }
+  @font-face { font-family: "Poppins"; font-weight: 800; src: url(assets/fonts/poppins-latin-800-normal.woff2); }
+  @font-face { font-family: "Poppins"; font-weight: 800; src: url(assets/fonts/poppins-latin-ext-800-normal.woff2); unicode-range: U+0100-024F; }
+  :root { --navy:#0b1a3d; --red:#d63228; --blue:#2f6fd6; --yellow:#f6b928; --ground:#f4f2ee; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1920px; overflow:hidden; background:var(--ground); font-family:"Poppins",sans-serif; color:var(--navy); }
+  .abs { position:absolute; }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(rgba(11,26,61,.045) 2px,transparent 2px),linear-gradient(90deg,rgba(11,26,61,.045) 2px,transparent 2px); background-size:90px 90px; }
+  .blob { position:absolute; border-radius:50%; background:#9dbdf0; opacity:.32; filter:blur(46px); }
+  .logo { left:72px; top:330px; width:120px; height:120px; border-radius:50%; box-shadow:0 6px 18px rgba(11,26,61,.25); }
+  .brand { left:212px; top:352px; font-size:30px; font-weight:800; letter-spacing:.04em; line-height:1.15; }
+  .brand small { display:block; font-size:20px; font-weight:700; letter-spacing:.32em; color:#5d6478; }
+  .kick { left:72px; top:520px; padding:10px 22px; border-radius:14px; background:var(--red); color:#fff; font-size:34px; font-weight:800; letter-spacing:.04em; }
+  .hl { left:72px; top:600px; width:960px; font-size:118px; line-height:1.0; font-weight:800; letter-spacing:-.035em; }
+  .hl em { font-style:normal; color:var(--blue); }
+  .dash { height:12px; border-radius:6px; top:880px; }
+  .sub { left:72px; top:925px; font-size:52px; font-weight:800; letter-spacing:-.01em; }
+  .sub span { background:var(--yellow); padding:4px 18px; border-radius:14px; }
+  .card { left:72px; top:1050px; width:936px; height:430px; background:#fff; border-radius:34px; box-shadow:0 22px 50px rgba(11,26,61,.14); }
+  .row { position:absolute; left:40px; font-size:38px; font-weight:700; }
+  .bar { position:absolute; left:340px; height:50px; border-radius:12px; }
+  .val { position:absolute; font-size:34px; font-weight:800; }
+  .water { left:0; top:1560px; width:1080px; height:400px; background:linear-gradient(180deg,#5d93e6,#2f6fd6); }
+  .cta { left:0; right:0; margin:0 auto; width:max-content; top:1650px; padding:20px 40px; border-radius:22px; background:#fff; font-size:40px; font-weight:800; color:var(--navy); box-shadow:0 14px 30px rgba(11,26,61,.25); }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="blob" style="left:-140px;top:120px;width:420px;height:760px"></div>
+  <div class="blob" style="left:700px;top:40px;width:380px;height:680px"></div>
+  <div class="blob" style="left:760px;top:1000px;width:360px;height:600px"></div>
+
+  <img class="abs logo" src="assets/logo.png" alt="" />
+  <div class="abs brand">NON STOP<small>SPOR KULÜBÜ</small></div>
+
+  <div class="abs kick">BEL FITIĞI · POSTÜR</div>
+  <div class="abs hl">Doktor<br/>«<em>Yüzün</em>» dedi.</div>
+  <div class="abs dash" style="left:72px;width:110px;background:var(--red)"></div>
+  <div class="abs dash" style="left:198px;width:110px;background:var(--blue)"></div>
+  <div class="abs sub"><span>Ama her kulaç aynı değil!</span></div>
+
+  <div class="abs card">
+    <div class="row" style="top:44px">Sırtüstü</div>
+    <div class="bar" style="top:42px;width:160px;background:var(--blue)"></div>
+    <div class="val" style="left:520px;top:44px;color:var(--blue)">düşük</div>
+    <div class="row" style="top:142px">Serbest</div>
+    <div class="bar" style="top:140px;width:200px;background:var(--blue)"></div>
+    <div class="val" style="left:560px;top:142px;color:var(--blue)">düşük</div>
+    <div class="row" style="top:240px">Kurbağalama</div>
+    <div class="bar" style="top:238px;width:330px;background:#f0a020"></div>
+    <div class="val" style="left:690px;top:240px;color:#c98a00">orta</div>
+    <div class="row" style="top:338px">Kelebek</div>
+    <div class="bar" style="top:336px;width:400px;background:var(--red)"></div>
+    <div class="val" style="left:760px;top:338px;color:var(--red)">yüksek</div>
+  </div>
+
+  <div class="abs water">
+    <svg class="abs" style="left:0;top:-28px" width="1080" height="30" viewBox="0 0 1080 30" preserveAspectRatio="none"><path d="M0 15 Q 67.5 0 135 15 T 270 15 T 405 15 T 540 15 T 675 15 T 810 15 T 945 15 T 1080 15 V 30 H 0 Z" fill="#5d93e6"/></svg>
+  </div>
+  <div class="abs cta">Hangi kulaç size uygun? ▶</div>
+</body>
+</html>
