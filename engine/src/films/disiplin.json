@@ -1,0 +1,89 @@
+{
+  "title": "Disiplin, yetenekten önce gelir.",
+  "mode": "cinematic",
+  "style": "dark-cinematic-sports-editorial",
+  "music": { "src": "audio/disiplin-score.wav", "volume": 0.85, "fadeIn": 0.3, "fadeOut": 1.0 },
+  "finish": { "grain": 0.085, "vignette": 0.62 },
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 5.8,
+      "kicker": "05:47 · havuz boş",
+      "title": "Kimse\nizlemiyor.",
+      "sound": [{ "src": "sfx/glint.wav", "at": 0.25, "volume": 0.5 }]
+    },
+    {
+      "id": "movement",
+      "type": "movement",
+      "duration": 5.4,
+      "transition": { "type": "dissolve", "duration": 0.8 },
+      "kicker": "Kulvar 4 · 4.000 metre",
+      "lines": ["Her sabah.", "Aynı kulvar."],
+      "numeral": "4",
+      "speed": 3.2
+    },
+    {
+      "id": "editorial",
+      "type": "editorial",
+      "duration": 6.0,
+      "transition": { "type": "whip", "duration": 0.4, "direction": "left" },
+      "word": "Yetenek",
+      "line": "bir başlangıçtır.",
+      "labels": ["365 GÜN", "05:47", "4.000 M"],
+      "question": ["Peki ya", "her gün?"],
+      "breakAt": 3.5,
+      "accent": "signal",
+      "sound": [
+        { "src": "sfx/whoosh.wav", "at": -0.05, "volume": 0.7 },
+        { "src": "sfx/paper.wav", "at": 0.1, "volume": 0.8 },
+        { "src": "sfx/paper.wav", "at": 1.05, "volume": 0.7 },
+        { "src": "sfx/paper.wav", "at": 1.75, "volume": 0.55 },
+        { "src": "sfx/paper.wav", "at": 1.97, "volume": 0.55 },
+        { "src": "sfx/paper.wav", "at": 2.2, "volume": 0.6 },
+        { "src": "sfx/tear.wav", "at": 3.5, "volume": 0.8 },
+        { "src": "sfx/riser.wav", "at": 4.1, "volume": 0.75 }
+      ]
+    },
+    {
+      "id": "impact",
+      "type": "impact",
+      "duration": 4.6,
+      "transition": { "type": "cut", "duration": 0 },
+      "word": "Disiplin",
+      "kicker": "Her gün. Her kulvar.",
+      "hit": 0,
+      "accent": "signal",
+      "sound": [
+        { "src": "sfx/impact.wav", "at": 0, "volume": 1 },
+        { "src": "sfx/shimmer.wav", "at": 1.15, "volume": 0.3 }
+      ]
+    },
+    {
+      "id": "resolution",
+      "type": "statement",
+      "duration": 5.4,
+      "transition": { "type": "push", "duration": 0.8 },
+      "lines": ["Disiplin,", "yetenekten", "önce gelir."],
+      "emphasis": 2,
+      "start": 0.45,
+      "accent": "signal",
+      "sound": [{ "src": "sfx/whoosh.wav", "at": 0, "volume": 0.35 }]
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "duration": 5.7,
+      "transition": { "type": "dissolve", "duration": 0.9 },
+      "logo": "brand/logo.png",
+      "logoSize": 540,
+      "wordmark": "Non Stop · Spor Kulübü",
+      "tagline": "Her gün. Durmadan.",
+      "fadeOut": 0.9,
+      "sound": [
+        { "src": "sfx/sub.wav", "at": 0.25, "volume": 0.6 },
+        { "src": "sfx/shimmer.wav", "at": 1.6, "volume": 0.45 }
+      ]
+    }
+  ]
+}
