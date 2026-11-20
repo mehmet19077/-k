@@ -150,3 +150,21 @@ export const sub = (): Stereo => {
   }
   return peakNormalize(out, -2);
 };
+
+/** Short punchy body hit for list items and beat-synced type. */
+export const hit = (): Stereo => {
+  const out = buffer(0.45);
+  const r = rng(71);
+  const f = svf();
+  let ph = 0;
+  for (let i = 0; i < out.L.length; i++) {
+    const t = i / SR;
+    ph += (2 * Math.PI * (55 + 120 * Math.exp(-t * 40))) / SR;
+    const body = Math.sin(ph) * env(t, 0.002, 0.09);
+    const snap = f(r() * 2 - 1, 1800, 0.8).band * env(t, 0.001, 0.025) * 1.5;
+    const x = sat(body + snap, 1.8);
+    out.L[i] = x;
+    out.R[i] = x;
+  }
+  return peakNormalize(out, -2);
+};

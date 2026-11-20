@@ -15,6 +15,7 @@ const NAMES: Record<string, string> = {
   DisiplinYetenek: 'Disiplin_Yetenekten_Once_9x16.mp4',
   'DisiplinYetenek-16x9': 'Disiplin_Yetenekten_Once_16x9.mp4',
   'DisiplinYetenek-1x1': 'Disiplin_Yetenekten_Once_1x1.mp4',
+  KaraAntrenman: 'NonStop_Kara_Antrenmani_9x16.mp4',
 };
 
 const ids = arg('comp', 'DisiplinYetenek')!.split(',');

@@ -20,6 +20,8 @@ const CHORDS: Record<string, number[]> = {
   impact: [NOTE.D2, NOTE.A2, NOTE.D3, NOTE.F3],
   statement: [NOTE.F2, NOTE.C3, NOTE.F3, NOTE.A3],
   outro: [NOTE.D2, NOTE.D3, NOTE.Fs3, NOTE.A3],
+  list: [NOTE.D2, NOTE.A2, NOTE.D3, NOTE.F3],
+  photo: [NOTE.F2, NOTE.C3, NOTE.F3, NOTE.A3],
 };
 const CUTOFF: Record<string, [number, number]> = {
   hook: [260, 420],
@@ -28,6 +30,8 @@ const CUTOFF: Record<string, [number, number]> = {
   impact: [1400, 1100],
   statement: [700, 520],
   outro: [520, 300],
+  list: [900, 1600],
+  photo: [700, 560],
 };
 
 /** Detuned additive saw pad, cross-faded between sections. */
@@ -166,6 +170,12 @@ export const buildScore = (film: ScoreFilm, fps: number, bpm = 120): Stereo => {
     // Pre-impact vacuum: rhythm stops half a second before a hit.
     const stopAt = next?.type === 'impact' ? s.end - 0.5 : s.end;
     if (s.type === 'movement') for (let t = s.start; t < stopAt; t += beat) kick(music, t, 0.35);
+    if (s.type === 'list') {
+      for (let t = s.start; t < stopAt; t += beat) kick(music, t, 0.5);
+      for (let t = s.start + beat / 2; t < stopAt; t += beat) tick(music, t, 0.14, r);
+      bass(music, s.start, stopAt, beat, 0.3);
+    }
+    if (s.type === 'photo') pings(music, s.start, s.end, beat * 2, 0.06, 9);
     if (s.type === 'editorial') {
       for (let t = s.start; t < stopAt; t += beat) kick(music, t, 0.42);
       for (let t = s.start; t < stopAt; t += beat / 2) tick(music, t, 0.16, r);

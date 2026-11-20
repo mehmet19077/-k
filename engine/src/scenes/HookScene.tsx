@@ -3,6 +3,7 @@ import { AbsoluteFill, interpolate } from 'remotion';
 import { z } from 'zod';
 import { cameraAt, addCamera, shake } from '../engine/camera/camera';
 import { DepthLayer, Stage } from '../engine/camera/Stage';
+import { MatFloor } from '../engine/fx/MatFloor';
 import { WaterGlints } from '../engine/fx/WaterGlints';
 import { ease } from '../engine/motion/easing';
 import { sceneBase } from '../engine/scene/schema';
@@ -15,13 +16,15 @@ export const hookSchema = z.object({
   type: z.literal('hook'),
   kicker: z.string(),
   title: z.string(),
+  /** What the light falls on: pool water or the dry-land training floor. */
+  ground: z.enum(['water', 'mat']).default('water'),
 });
 
 /**
  * HOOK — darkness first. A line of light opens on the water, the glints
  * follow, then one minimal headline is cut out of the dark.
  */
-export const HookScene: React.FC<z.infer<typeof hookSchema>> = ({ kicker, title }) => {
+export const HookScene: React.FC<z.infer<typeof hookSchema>> = ({ kicker, title, ground }) => {
   const L = useLayout();
   const { t, duration, unit } = L;
   const light = interpolate(t, [0.3, 2.8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.camera });
@@ -43,7 +46,11 @@ export const HookScene: React.FC<z.infer<typeof hookSchema>> = ({ kicker, title 
           />
         </DepthLayer>
         <DepthLayer z={depth.mid}>
-          <WaterGlints intensity={light} horizon={horizon} spread={0.75} speed={0.8} />
+          {ground === 'water' ? (
+            <WaterGlints intensity={light} horizon={horizon} spread={0.75} speed={0.8} />
+          ) : (
+            <MatFloor z={t * 0.9} horizon={horizon} light={light} />
+          )}
           <div
             style={{
               position: 'absolute',

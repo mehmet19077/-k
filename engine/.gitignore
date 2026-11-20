@@ -1,3 +1,7 @@
 node_modules/
 out/
 .remotion/
+
+# Photos/videos of people (children!) never go to the public repo.
+public/private/
+renders/private/

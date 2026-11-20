@@ -42,7 +42,7 @@ const toScene = (beat: Beat, brief: Brief, duration: number): SceneSpec | null =
   const base = { id: beat, duration, sound: SOUND[beat] };
   switch (beat) {
     case 'hook':
-      return { ...base, type: 'hook', ...c.hook };
+      return { ...base, type: 'hook', ground: 'water', ...c.hook };
     case 'development':
       return c.development ? { ...base, type: 'movement', speed: 3.2, ...c.development } : null;
     case 'problem':

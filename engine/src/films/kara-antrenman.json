@@ -1,0 +1,83 @@
+{
+  "title": "Kara antrenmanı",
+  "mode": "sports",
+  "style": "dark-cinematic-sports-editorial",
+  "music": { "src": "audio/kara-antrenman-score.wav", "volume": 0.85, "fadeIn": 0.3, "fadeOut": 1.0 },
+  "finish": { "grain": 0.075, "vignette": 0.58 },
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "ground": "mat",
+      "duration": 4.0,
+      "kicker": "Non Stop · suyun dışında",
+      "title": "Kara\nantrenmanı.",
+      "sound": [{ "src": "sfx/glint.wav", "at": 0.25, "volume": 0.4 }]
+    },
+    {
+      "id": "program",
+      "type": "list",
+      "duration": 4.4,
+      "transition": { "type": "whip", "duration": 0.4, "direction": "up" },
+      "kicker": "Bugünün programı",
+      "items": ["Mobilite", "Core", "Denge", "Koordinasyon"],
+      "start": 0.5,
+      "beat": 0.5,
+      "accent": "signal",
+      "sound": [
+        { "src": "sfx/whoosh.wav", "at": -0.05, "volume": 0.6 },
+        { "src": "sfx/hit.wav", "at": 0.5, "volume": 0.9 },
+        { "src": "sfx/hit.wav", "at": 1.0, "volume": 0.9 },
+        { "src": "sfx/hit.wav", "at": 1.5, "volume": 0.9 },
+        { "src": "sfx/hit.wav", "at": 2.0, "volume": 1 }
+      ]
+    },
+    {
+      "id": "takim",
+      "type": "photo",
+      "mode": "print",
+      "duration": 4.6,
+      "transition": { "type": "wipe", "duration": 0.6 },
+      "src": "private/takim.jpg",
+      "size": [2016, 1512],
+      "kicker": "Takım",
+      "title": "Birlikte\ngüçleniyoruz.",
+      "labels": ["KUVVET", "DENGE", "EKİP"],
+      "accent": "signal",
+      "sound": [
+        { "src": "sfx/paper.wav", "at": 0.15, "volume": 0.8 },
+        { "src": "sfx/paper.wav", "at": 0.8, "volume": 0.6 },
+        { "src": "sfx/paper.wav", "at": 1.05, "volume": 0.6 },
+        { "src": "sfx/paper.wav", "at": 1.3, "volume": 0.6 }
+      ]
+    },
+    {
+      "id": "guven",
+      "type": "photo",
+      "mode": "full",
+      "duration": 4.6,
+      "transition": { "type": "dissolve", "duration": 0.8 },
+      "src": "private/antrenor-sporcu.jpg",
+      "size": [1932, 2576],
+      "focus": [0.5, 0.42],
+      "title": "Güç,\ngüvenle başlar.",
+      "titlePosition": "bottom",
+      "sound": [{ "src": "sfx/shimmer.wav", "at": 0.6, "volume": 0.3 }]
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "duration": 5.1,
+      "transition": { "type": "dissolve", "duration": 0.9 },
+      "logo": "brand/logo.png",
+      "logoSize": 540,
+      "wordmark": "Non Stop · Spor Kulübü",
+      "tagline": "Her gün. Durmadan.",
+      "fadeOut": 0.9,
+      "sound": [
+        { "src": "sfx/sub.wav", "at": 0.25, "volume": 0.6 },
+        { "src": "sfx/shimmer.wav", "at": 1.6, "volume": 0.45 }
+      ]
+    }
+  ]
+}

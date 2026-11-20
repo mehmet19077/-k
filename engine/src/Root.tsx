@@ -6,6 +6,7 @@ import { FPS } from './engine/timing';
 import { Film } from './film/Film';
 import { filmSchema, type FilmSpec } from './film/schema';
 import disiplin from './films/disiplin.json';
+import karaAntrenman from './films/kara-antrenman.json';
 import { composeFilm } from './story/compose';
 
 /** Duration always follows the film spec, so editing scenes in the Studio re-times the composition. */
@@ -15,6 +16,8 @@ const fromSpec: CalculateMetadataFunction<FilmSpec> = ({ props }) => {
 };
 
 const disiplinFilm = filmSchema.parse(disiplin);
+/** Uses photos from public/private/ (git-ignored: people's photos never go to the public repo). */
+const karaAntrenmanFilm = filmSchema.parse(karaAntrenman);
 
 /** Same story, written by the composer from a brief in "minimal" mode. */
 const composed = composeFilm({
@@ -52,6 +55,17 @@ export const Root: React.FC = () => (
         height={FORMATS[format].height}
       />
     ))}
+    <Composition
+      id="KaraAntrenman"
+      component={Film}
+      schema={filmSchema}
+      defaultProps={karaAntrenmanFilm}
+      calculateMetadata={fromSpec}
+      durationInFrames={computeTimeline(karaAntrenmanFilm, FPS).totalFrames}
+      fps={FPS}
+      width={FORMATS.vertical.width}
+      height={FORMATS.vertical.height}
+    />
     <Composition
       id="Composer-Minimal"
       component={Film}

@@ -23,6 +23,7 @@ const palette: Record<string, () => ReturnType<typeof sfx.impact>> = {
   tear: sfx.tear,
   glint: sfx.glint,
   sub: sfx.sub,
+  hit: sfx.hit,
 };
 
 for (const [name, make] of Object.entries(palette)) {
@@ -30,7 +31,10 @@ for (const [name, make] of Object.entries(palette)) {
   console.log(`sfx/${name}.wav`);
 }
 
-const films: Record<string, string> = { 'disiplin-score': 'src/films/disiplin.json' };
+const films: Record<string, string> = {
+  'disiplin-score': 'src/films/disiplin.json',
+  'kara-antrenman-score': 'src/films/kara-antrenman.json',
+};
 for (const [name, file] of Object.entries(films)) {
   const film = JSON.parse(readFileSync(join(root, file), 'utf8')) as ScoreFilm;
   writeWav(out(`audio/${name}.wav`), buildScore(film, FPS));
