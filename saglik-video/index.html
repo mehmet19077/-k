@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="tr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Poppins"; font-weight: 400; src: url(assets/fonts/poppins-latin-400-normal.woff2) format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 400; src: url(assets/fonts/poppins-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+      @font-face { font-family: "Poppins"; font-weight: 500; src: url(assets/fonts/poppins-latin-500-normal.woff2) format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 500; src: url(assets/fonts/poppins-latin-ext-500-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url(assets/fonts/poppins-latin-600-normal.woff2) format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url(assets/fonts/poppins-latin-ext-600-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+      @font-face { font-family: "Poppins"; font-weight: 700; src: url(assets/fonts/poppins-latin-700-normal.woff2) format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 700; src: url(assets/fonts/poppins-latin-ext-700-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url(assets/fonts/poppins-latin-800-normal.woff2) format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url(assets/fonts/poppins-latin-ext-800-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+
+      :root {
+        --ground: #f4f2ee;
+        --navy: #0b1a3d;
+        --ink: #0b1a3d;
+        --red: #d63228;
+        --blue: #2f6fd6;
+        --sky: #8fb6f0;
+        --yellow: #f6b928;
+        --muted: #7a8296;
+        --card: #ffffff;
+        --font-display: "Poppins", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: var(--font-display); color: var(--ink); background: var(--ground); }
+      .clip { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+
+      /* background */
+      #bg { background: var(--ground); }
+      .grid { position: absolute; inset: 0;
+        background-image: linear-gradient(rgba(11,26,61,0.045) 2px, transparent 2px), linear-gradient(90deg, rgba(11,26,61,0.045) 2px, transparent 2px);
+        background-size: 90px 90px; }
+      .blob { position: absolute; border-radius: 50%; background: #9dbdf0; opacity: 0.32; filter: blur(46px); }
+
+      /* top bar */
+      .seg { position: absolute; top: 96px; height: 6px; width: 172px; border-radius: 3px; background: rgba(11,26,61,0.14); overflow: hidden; }
+      .seg i { position: absolute; inset: 0; background: var(--navy); transform-origin: left center; transform: scaleX(0); }
+      .seg i.r { background: var(--red); }
+      .chap { position: absolute; left: 72px; top: 150px; font-size: 26px; font-weight: 700; letter-spacing: 0.22em; color: var(--navy); }
+      .chap b { color: var(--red); margin-right: 10px; }
+      .chap.light { color: #fff; }
+      #badge { position: absolute; right: 72px; top: 132px; width: 84px; height: 84px; border-radius: 50%; box-shadow: 0 4px 14px rgba(11,26,61,0.25); }
+
+      /* headline */
+      .hl { position: absolute; left: 72px; top: 250px; width: 936px; font-size: 76px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; color: var(--navy); }
+      .hl .ln { display: block; }
+      .hl.light { color: #fff; }
+      .dash { position: absolute; left: 72px; height: 8px; border-radius: 4px; }
+      .kicker { position: absolute; left: 72px; font-size: 24px; font-weight: 700; letter-spacing: 0.2em; color: var(--blue); }
+
+      /* cards */
+      .card { position: absolute; background: var(--card); border-radius: 28px; box-shadow: 0 18px 40px rgba(11,26,61,0.10); }
+      .row-label { font-size: 30px; font-weight: 500; color: var(--navy); }
+      .bar { height: 44px; border-radius: 10px; transform-origin: left center; }
+      .val { font-size: 30px; font-weight: 700; }
+
+      .callout { position: absolute; left: 72px; top: 1420px; padding: 18px 30px; border-radius: 18px; background: var(--yellow); color: var(--navy); font-size: 36px; font-weight: 700; box-shadow: 0 10px 24px rgba(246,185,40,0.35); }
+
+      /* captions */
+      .cap { position: absolute; left: 0; right: 0; top: 1590px; display: flex; justify-content: center; }
+      .cap span { padding: 16px 34px; border-radius: 22px; background: var(--navy); color: #fff; font-size: 54px; font-weight: 700; letter-spacing: -0.01em; box-shadow: 0 12px 30px rgba(11,26,61,0.28); white-space: nowrap; }
+      .cap.inv span { background: #fff; color: var(--navy); }
+
+      .foot { position: absolute; left: 72px; top: 1820px; font-size: 20px; color: var(--muted); }
+
+      /* wipes */
+      .wipe { position: absolute; top: -200px; left: 0; width: 1500px; height: 2400px; transform: skewX(-12deg); background: var(--navy); }
+      .wipe .s1 { position: absolute; top: 0; bottom: 0; left: -34px; width: 14px; background: var(--red); }
+      .wipe .s2 { position: absolute; top: 0; bottom: 0; left: -16px; width: 14px; background: var(--blue); }
+
+      /* S1 spine */
+      .vert { position: absolute; left: -85px; width: 170px; height: 64px; border-radius: 22px; background: #fff; border: 5px solid var(--navy); }
+      .vert::after { content: ""; position: absolute; right: -46px; top: 18px; width: 40px; height: 18px; border-radius: 9px; background: var(--navy); }
+      .disc { position: absolute; left: -62px; width: 124px; height: 22px; border-radius: 11px; background: var(--sky); }
+      .water { position: absolute; left: 0; width: 1080px; background: linear-gradient(180deg, rgba(47,111,214,0.55), rgba(47,111,214,0.78)); }
+      .wave { position: absolute; left: 0; top: -38px; width: 2160px; height: 40px; }
+
+      /* S2 */
+      .tank { position: absolute; left: 72px; top: 560px; width: 440px; height: 560px; border-radius: 30px; background: #fff; overflow: hidden; box-shadow: 0 18px 40px rgba(11,26,61,0.10); }
+      .lvl { position: absolute; right: 14px; padding: 2px 10px; border-radius: 8px; background: rgba(255,255,255,0.9); font-size: 22px; font-weight: 700; color: var(--navy); letter-spacing: 0.06em; }
+      .big { position: absolute; left: 560px; top: 650px; width: 480px; white-space: nowrap; font-size: 112px; font-weight: 800; letter-spacing: -0.04em; color: var(--navy); }
+      .bigsub { position: absolute; left: 566px; top: 590px; font-size: 26px; font-weight: 700; letter-spacing: 0.16em; color: #5d6478; }
+      .meter { position: absolute; left: 566px; top: 840px; width: 440px; height: 34px; border-radius: 17px; background: rgba(11,26,61,0.08); overflow: hidden; }
+      .meter i { position: absolute; left: 0; top: 0; bottom: 0; width: 440px; border-radius: 17px; background: var(--navy); transform-origin: left center; }
+      .where { position: absolute; left: 566px; top: 900px; font-size: 36px; font-weight: 700; color: var(--blue); }
+
+      /* S3 */
+      .needle { position: absolute; left: 536px; top: 640px; width: 8px; height: 230px; border-radius: 4px; background: var(--navy); transform-origin: 50% 100%; }
+      .hub { position: absolute; left: 516px; top: 850px; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); border: 8px solid #fff; }
+      .glabel { position: absolute; left: 0; right: 0; top: 920px; text-align: center; font-size: 40px; font-weight: 800; }
+
+      /* S4 */
+      .step { position: absolute; left: 72px; width: 936px; height: 128px; background: #fff; border-radius: 24px; box-shadow: 0 14px 32px rgba(11,26,61,0.09); }
+      .step .num { position: absolute; left: 26px; top: 30px; width: 68px; height: 68px; border-radius: 18px; color: #fff; font-size: 30px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+      .step .tt { position: absolute; left: 124px; top: 24px; font-size: 36px; font-weight: 700; color: var(--navy); }
+      .step .ds { position: absolute; left: 124px; top: 72px; font-size: 24px; font-weight: 500; color: var(--muted); }
+      .step .ck { position: absolute; right: 30px; top: 34px; width: 60px; height: 60px; border-radius: 50%; background: #e7f6ec; }
+      .rail { position: absolute; left: 132px; width: 8px; border-radius: 4px; background: var(--sky); transform-origin: top center; }
+
+      /* S5 */
+      #navy { background: var(--navy); }
+      .bigLogo { position: absolute; left: 340px; top: 700px; width: 400px; height: 400px; border-radius: 50%; }
+      .ring { position: absolute; left: 320px; top: 680px; width: 440px; height: 440px; }
+      .tag { position: absolute; left: 0; right: 0; top: 1160px; text-align: center; color: #fff; font-size: 34px; font-weight: 700; letter-spacing: 0.5em; padding-left: 0.5em; }
+      .cta { position: absolute; left: 0; right: 0; margin: 0 auto; width: max-content; top: 1260px; padding: 22px 40px; border-radius: 20px; background: var(--yellow); color: var(--navy); font-size: 40px; font-weight: 800; white-space: nowrap; }
+      .disc-note { position: absolute; left: 72px; right: 72px; top: 1800px; text-align: center; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.55); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="59.6" data-width="1080" data-height="1920">
+
+      <!-- Background (whole film) -->
+      <div id="bg" class="clip" data-start="0" data-duration="59.6" data-track-index="0">
+        <div class="grid"></div>
+        <div class="blob" id="b1" style="left:-120px;top:300px;width:420px;height:760px"></div>
+        <div class="blob" id="b2" style="left:640px;top:120px;width:380px;height:680px"></div>
+        <div class="blob" id="b3" style="left:300px;top:1100px;width:460px;height:820px"></div>
+        <div class="blob" id="b4" style="left:820px;top:1250px;width:360px;height:640px"></div>
+      </div>
+
+      <!-- Navy ground for finale -->
+      <div id="navy" class="clip" data-start="52.4" data-duration="7.2" data-track-index="1"></div>
+
+      <!-- ============ S1 DURUM 0 - 8.8 ============ -->
+      <div id="s1" class="clip" data-start="0" data-duration="8.8" data-track-index="2">
+        <div class="hl" id="s1h"><span class="ln">Bel fıtığı.</span><span class="ln">Postür bozukluğu.</span><span class="ln">Doktor: «Yüzün.»</span></div>
+        <div class="dash" id="s1d1" style="top:520px;width:70px;background:var(--red)"></div>
+        <div class="dash" id="s1d2" style="left:154px;top:520px;width:70px;background:var(--blue)"></div>
+
+        <div class="abs" id="spine" style="left:540px;top:640px;width:0;height:0">
+          <div id="v0" class="vert" style="top:0"></div>
+          <div id="d0" class="disc" style="top:75px"></div>
+          <div id="v1" class="vert" style="top:108px"></div>
+          <div id="d1" class="disc" style="top:183px"></div>
+          <div id="v2" class="vert" style="top:216px"></div>
+          <div id="d2" class="disc" style="top:291px"></div>
+          <div id="v3" class="vert" style="top:324px"></div>
+          <div id="d3" class="disc" style="top:399px"></div>
+          <div id="v4" class="vert" style="top:432px"></div>
+          <div id="d4" class="disc" style="top:507px"></div>
+          <div id="v5" class="vert" style="top:540px"></div>
+          <div id="d5" class="disc" style="top:615px"></div>
+          <div id="v6" class="vert" style="top:648px"></div>
+        </div>
+        <svg class="abs" id="pulse" style="left:420px;top:1098px" width="240" height="120" viewBox="0 0 240 120">
+          <ellipse cx="120" cy="60" rx="80" ry="22" fill="none" stroke="#d63228" stroke-width="5" />
+        </svg>
+        <div class="abs" id="fitikTag" style="left:700px;top:1132px;padding:10px 20px;border-radius:14px;background:var(--red);color:#fff;font-size:28px;font-weight:700">fıtık</div>
+        <div class="abs" id="postTag" style="left:110px;top:820px;padding:10px 20px;border-radius:14px;background:var(--navy);color:#fff;font-size:28px;font-weight:700">postür</div>
+
+        <div class="water" id="s1water" style="top:1970px;height:900px">
+          <svg class="wave" id="s1wave" viewBox="0 0 2160 40" preserveAspectRatio="none"><path d="M0 20 Q 67.5 0 135 20 T 270 20 T 405 20 T 540 20 T 675 20 T 810 20 T 945 20 T 1080 20 T 1215 20 T 1350 20 T 1485 20 T 1620 20 T 1755 20 T 1890 20 T 2025 20 T 2160 20 V 40 H 0 Z" fill="rgba(47,111,214,0.55)"/></svg>
+        </div>
+        <div class="callout" id="s1call" style="top:1440px">Peki havuzda ne yapacaksınız?</div>
+      </div>
+
+      <!-- ============ S2 NEDEN SU 8.8 - 25.1 ============ -->
+      <div id="s2" class="clip" data-start="8.8" data-duration="16.3" data-track-index="2">
+        <div class="hl" id="s2h"><span class="ln">Suda ağırlığınızı</span><span class="ln">su taşır.</span></div>
+        <div class="dash" id="s2d1" style="top:440px;width:70px;background:var(--red)"></div>
+        <div class="dash" id="s2d2" style="left:154px;top:440px;width:70px;background:var(--blue)"></div>
+        <div class="kicker" id="s2k" style="top:480px">AYAKTA DURURKEN TAŞINAN VÜCUT AĞIRLIĞI</div>
+
+        <div class="tank" id="tank">
+          <div class="abs" id="tankWater" style="left:0;top:0;width:440px;height:560px;background:linear-gradient(180deg,#5d93e6,#2f6fd6)">
+            <svg class="abs" id="tankWave" style="left:0;top:-22px" width="880" height="24" viewBox="0 0 880 24" preserveAspectRatio="none"><path d="M0 12 Q 55 0 110 12 T 220 12 T 330 12 T 440 12 T 550 12 T 660 12 T 770 12 T 880 12 V 24 H 0 Z" fill="#5d93e6"/></svg>
+          </div>
+          <svg class="abs" style="left:0;top:0" width="440" height="560" viewBox="0 0 440 560">
+            <g fill="#0b1a3d" opacity="0.92">
+              <circle cx="220" cy="96" r="46"/>
+              <rect x="196" y="140" width="48" height="28" rx="10"/>
+              <rect x="150" y="160" width="140" height="190" rx="54"/>
+              <rect x="112" y="176" width="40" height="170" rx="20"/>
+              <rect x="288" y="176" width="40" height="170" rx="20"/>
+              <rect x="164" y="320" width="50" height="210" rx="25"/>
+              <rect x="226" y="320" width="50" height="210" rx="25"/>
+            </g>
+          </svg>
+          <div class="lvl" style="top:136px">BOYUN</div>
+          <div class="lvl" style="top:206px">GÖĞÜS</div>
+          <div class="lvl" style="top:300px">BEL</div>
+        </div>
+
+        <div class="bigsub" id="bigsub">TAŞIDIĞINIZ YÜK</div>
+        <div class="big" id="n0">%100</div>
+        <div class="big" id="n1">%50–60</div>
+        <div class="big" id="n2">%25–35</div>
+        <div class="big" id="n3" style="color:var(--red)">%6–10</div>
+        <div class="meter"><i id="meterFill"></i></div>
+        <div class="where" id="w0">Karada</div>
+        <div class="where" id="w1">Bel hizasında</div>
+        <div class="where" id="w2">Göğüs hizasında</div>
+        <div class="where" id="w3" style="color:var(--red)">Boyun hizasında</div>
+
+        <div class="card" id="s2card" style="left:72px;top:1150px;width:936px;height:240px">
+          <div class="abs row-label" style="left:36px;top:26px;font-size:24px">Karada</div>
+          <div class="abs bar" id="sb0" style="left:180px;top:20px;width:620px;height:36px;background:var(--navy)"></div>
+          <div class="abs val" id="sv0" style="left:814px;top:20px;font-size:24px;color:var(--navy)">%100</div>
+          <div class="abs row-label" style="left:36px;top:78px;font-size:24px">Bel</div>
+          <div class="abs bar" id="sb1" style="left:180px;top:72px;width:341px;height:36px;background:var(--blue)"></div>
+          <div class="abs val" id="sv1" style="left:535px;top:72px;font-size:24px;color:var(--blue)">%50–60</div>
+          <div class="abs row-label" style="left:36px;top:130px;font-size:24px">Göğüs</div>
+          <div class="abs bar" id="sb2" style="left:180px;top:124px;width:186px;height:36px;background:var(--blue)"></div>
+          <div class="abs val" id="sv2" style="left:380px;top:124px;font-size:24px;color:var(--blue)">%25–35</div>
+          <div class="abs row-label" style="left:36px;top:182px;font-size:24px">Boyun</div>
+          <div class="abs bar" id="sb3" style="left:180px;top:176px;width:50px;height:36px;background:var(--red)"></div>
+          <div class="abs val" id="sv3" style="left:244px;top:176px;font-size:24px;color:var(--red)">%6–10</div>
+        </div>
+        <div class="callout" id="s2call">Yük azalır, hareket kalır.</div>
+        <div class="foot" id="s2foot" data-layout-ignore>Harrison &amp; Bulstrode · hidroterapi havuzu ölçümü · şematik</div>
+      </div>
+
+      <!-- ============ S3 AMA 25.1 - 38.3 ============ -->
+      <div id="s3" class="clip" data-start="25.1" data-duration="13.2" data-track-index="2">
+        <div class="hl" id="s3h"><span class="ln">Ama her kulaç</span><span class="ln">aynı değil.</span></div>
+        <div class="dash" id="s3d1" style="top:440px;width:70px;background:var(--red)"></div>
+        <div class="dash" id="s3d2" style="left:154px;top:440px;width:70px;background:var(--blue)"></div>
+        <div class="kicker" id="s3k" style="top:480px">BELİ AŞIRI GERME RİSKİ · ŞEMATİK</div>
+
+        <svg class="abs" id="gauge" style="left:240px;top:580px" width="600" height="320" viewBox="0 0 600 320">
+          <path d="M60 300 A 240 240 0 0 1 130 130" fill="none" stroke="#2f6fd6" stroke-width="44" stroke-linecap="round"/>
+          <path d="M150 112 A 240 240 0 0 1 450 112" fill="none" stroke="#f6b928" stroke-width="44"/>
+          <path d="M470 130 A 240 240 0 0 1 540 300" fill="none" stroke="#d63228" stroke-width="44" stroke-linecap="round"/>
+          <text x="40" y="250" font-family="Poppins" font-weight="700" font-size="22" fill="#7a8296" text-anchor="end"> </text>
+        </svg>
+        <div class="needle" id="needle"></div>
+        <div class="hub"></div>
+        <div class="glabel" id="g0" style="color:var(--blue)">Sırtüstü · düşük</div>
+        <div class="glabel" id="g1" style="color:var(--blue)">Serbest · düşük</div>
+        <div class="glabel" id="g2" style="color:#c98a00">Kurbağalama · orta</div>
+        <div class="glabel" id="g3" style="color:var(--red)">Kelebek · yüksek</div>
+
+        <div class="card" id="s3card" style="left:72px;top:1010px;width:936px;height:380px">
+          <div class="abs row-label" id="r0" style="left:36px;top:24px">Sırtüstü</div>
+          <div class="abs bar" id="rb0" style="left:300px;top:22px;width:150px;background:var(--blue)"></div>
+          <div class="abs val" id="rv0" style="left:466px;top:24px;color:var(--blue)">düşük</div>
+          <div class="abs row-label" id="r1" style="left:36px;top:110px">Serbest</div>
+          <div class="abs bar" id="rb1" style="left:300px;top:108px;width:190px;background:var(--blue)"></div>
+          <div class="abs val" id="rv1" style="left:506px;top:110px;color:var(--blue)">düşük</div>
+          <div class="abs row-label" id="r2" style="left:36px;top:196px">Kurbağalama</div>
+          <div class="abs bar" id="rb2" style="left:300px;top:194px;width:340px;background:#f0a020"></div>
+          <div class="abs val" id="rv2" style="left:656px;top:196px;color:#c98a00">orta</div>
+          <div class="abs row-label" id="r3" style="left:36px;top:282px">Kelebek</div>
+          <div class="abs bar" id="rb3" style="left:300px;top:280px;width:470px;background:var(--red)"></div>
+          <div class="abs val" id="rv3" style="left:786px;top:282px;color:var(--red)">yüksek</div>
+        </div>
+        <div class="callout" id="s3call">Yanlış kulaç, faydayı tersine çevirir.</div>
+      </div>
+
+      <!-- ============ S4 PROGRAM 38.3 - 52.4 ============ -->
+      <div id="s4" class="clip" data-start="38.3" data-duration="14.1" data-track-index="2">
+        <div class="hl" id="s4h"><span class="ln">İşte tam burada</span><span class="ln">devreye biz giriyoruz.</span></div>
+        <div class="dash" id="s4d1" style="top:440px;width:70px;background:var(--red)"></div>
+        <div class="dash" id="s4d2" style="left:154px;top:440px;width:70px;background:var(--blue)"></div>
+        <div class="kicker" id="s4k" style="top:480px">NON STOP SU İÇİ PROGRAMI</div>
+
+        <div class="rail" id="rail" style="top:640px;height:600px"></div>
+        <div class="step" id="st0" style="top:560px"><div class="num" style="background:var(--red)">01</div><div class="tt">Hekim raporunuzu okuruz</div><div class="ds">Tanı ve kısıtlar netleşir</div><svg class="ck" id="ck0" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e3f4e8"/><path d="M17 31 L26 40 L44 21" fill="none" stroke="#1f9d55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step" id="st1" style="top:710px"><div class="num" style="background:var(--blue)">02</div><div class="tt">Suda değerlendirme yaparız</div><div class="ds">Hareket açıklığı ve güven</div><svg class="ck" id="ck1" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e3f4e8"/><path d="M17 31 L26 40 L44 21" fill="none" stroke="#1f9d55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step" id="st2" style="top:860px"><div class="num" style="background:var(--red)">03</div><div class="tt">Size uygun kulacı seçeriz</div><div class="ds">Belinizi koruyan teknik</div><svg class="ck" id="ck2" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e3f4e8"/><path d="M17 31 L26 40 L44 21" fill="none" stroke="#1f9d55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step" id="st3" style="top:1010px"><div class="num" style="background:var(--blue)">04</div><div class="tt">Tekniği sıfırdan öğretiriz</div><div class="ds">Doğru nefes, doğru gövde</div><svg class="ck" id="ck3" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e3f4e8"/><path d="M17 31 L26 40 L44 21" fill="none" stroke="#1f9d55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step" id="st4" style="top:1160px"><div class="num" style="background:var(--red)">05</div><div class="tt">Yükü kademeli artırırız</div><div class="ds">Adım adım, ölçerek</div><svg class="ck" id="ck4" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e3f4e8"/><path d="M17 31 L26 40 L44 21" fill="none" stroke="#1f9d55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="callout" id="s4call">Antrenör gözetiminde, tek tek.</div>
+      </div>
+
+      <!-- ============ S5 BAŞLANGIÇ 52.4 - 59.6 ============ -->
+      <div id="s5" class="clip" data-start="52.4" data-duration="7.2" data-track-index="2">
+        <div class="hl light" id="s5h"><span class="ln">Doktorunuzun önerisini</span><span class="ln">programa çeviriyoruz.</span></div>
+        <div class="dash" id="s5d1" style="top:440px;width:70px;background:var(--red)"></div>
+        <div class="dash" id="s5d2" style="left:154px;top:440px;width:70px;background:var(--blue)"></div>
+        <svg class="ring" id="ring" viewBox="0 0 440 440"><defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#d63228"/><stop offset="1" stop-color="#2f6fd6"/></linearGradient></defs><circle id="ringC" cx="220" cy="220" r="212" fill="none" stroke="url(#rg)" stroke-width="8" stroke-dasharray="1332" stroke-dashoffset="1332" transform="rotate(-90 220 220)"/></svg>
+        <img class="bigLogo" id="bigLogo" src="assets/logo.png" alt="" />
+        <div class="tag" id="tag">SPOR HERKES İÇİN</div>
+        <div class="cta" id="cta">Değerlendirme için bize yazın.</div>
+        <div class="disc-note" id="note">Bu içerik tıbbi tavsiye değildir. Programlar hekim onayı ve raporuyla uygulanır.</div>
+      </div>
+
+      <!-- Top bar (whole film) -->
+      <div id="top" class="clip" data-start="0" data-duration="59.6" data-track-index="3">
+        <div class="seg" style="left:72px"><i id="p0"></i></div>
+        <div class="seg" style="left:263px"><i id="p1"></i></div>
+        <div class="seg" style="left:454px"><i id="p2"></i></div>
+        <div class="seg" style="left:645px"><i id="p3"></i></div>
+        <div class="seg" style="left:836px"><i id="p4"></i></div>
+        <img id="badge" src="assets/logo.png" alt="" />
+      </div>
+      <div class="chap clip" style="inset:auto;left:72px;top:150px" data-start="0" data-duration="8.8" data-track-index="4"><b>01</b>DURUM</div>
+      <div class="chap clip" style="inset:auto;left:72px;top:150px" data-start="8.8" data-duration="16.3" data-track-index="4"><b>02</b>NEDEN SU</div>
+      <div class="chap clip" style="inset:auto;left:72px;top:150px" data-start="25.1" data-duration="13.2" data-track-index="4"><b>03</b>AMA</div>
+      <div class="chap clip" style="inset:auto;left:72px;top:150px" data-start="38.3" data-duration="14.1" data-track-index="4"><b>04</b>PROGRAM</div>
+      <div class="chap light clip" style="inset:auto;left:72px;top:150px" data-start="52.4" data-duration="7.2" data-track-index="4"><b>05</b>BAŞLANGIÇ</div>
+
+      <!-- Captions are generated below -->
+      <div id="caps"></div>
+
+      <!-- Wipes -->
+      <div id="wipes" class="clip" data-start="0" data-duration="59.6" data-track-index="6" style="pointer-events:none">
+        <div class="wipe" id="wp1"><div class="s1"></div><div class="s2"></div></div>
+        <div class="wipe" id="wp2"><div class="s1"></div><div class="s2"></div></div>
+        <div class="wipe" id="wp3"><div class="s1"></div><div class="s2"></div></div>
+        <div class="wipe" id="wp4"><div class="s1"></div><div class="s2"></div></div>
+      </div>
+
+      <audio id="vo" src="assets/voiceover.m4a" data-start="0" data-duration="59.6" data-track-index="7" data-volume="1"></audio>
+    </div>
+
+    <script>
+      // ---------- captions (voiceover timing) ----------
+      const CAPS = [
+        [0.1,1.2,"Doktorunuz, yüzmeye"],[1.3,2.4,"başlayın dedi."],[2.6,3.9,"Belinizde fıtık var"],[4.1,5.6,"ya da duruşunuz bozulmuş."],
+        [5.9,7.0,"Havuza geldiniz."],[7.2,7.7,"Peki şimdi"],[7.8,8.6,"ne yapacaksınız?"],
+        [9.1,9.9,"Suyun işi"],[10.0,10.4,"tam burada"],[10.5,11.2,"başlıyor."],[11.4,12.6,"Karada, ağırlığınızın"],[12.7,13.5,"tamamını siz"],[13.6,14.4,"taşıyorsunuz."],
+        [14.6,15.4,"Bel hizasında"],[15.5,16.5,"suda, yarısını."],[16.8,17.9,"Göğüs hizasında"],[18.0,18.9,"üçte birini."],[19.1,20.2,"Boyun hizasında,"],[20.3,21.7,"neredeyse hiçbirini."],
+        [22.0,22.9,"Yük azalıyor."],[23.2,23.8,"Ama hareket"],[23.9,24.8,"duruyor mu? Hayır."],
+        [25.5,26.2,"Ama dikkat."],[26.4,26.9,"Her kulaç"],[27.0,27.8,"aynı değil."],[28.1,28.7,"Sırtüstü ve"],[28.8,29.5,"serbest, bel"],[29.6,30.0,"için en"],[30.1,31.1,"güvenli olanlar."],
+        [31.5,32.7,"Kurbağalama teknik ister."],[33.2,33.8,"Kelebek ise"],[33.9,34.5,"beli tekrar"],[34.6,35.6,"tekrar geriyor."],[36.0,36.7,"Yanlış kulaç,"],[36.8,38.0,"faydayı tersine çevirir."],
+        [38.6,39.0,"İşte tam"],[39.1,39.9,"burada devreye"],[40.0,41.0,"biz giriyoruz."],[41.4,42.5,"Hekim raporunuzu okuruz."],[42.8,44.3,"Suda değerlendirme yaparız."],
+        [44.6,45.1,"Size uygun"],[45.2,46.1,"kulacı seçeriz."],[46.5,47.3,"Tekniği sıfırdan"],[47.4,48.1,"öğretiriz."],[48.3,49.0,"Yükü kademeli"],[49.1,49.8,"artırırız."],
+        [50.1,50.7,"Tek başınıza"],[50.8,51.5,"değil, antrenör"],[51.6,52.3,"gözetiminde."],
+        [52.7,53.3,"Doktorunuzun"],[53.4,54.4,"önerisini programa"],[54.5,55.2,"çeviriyoruz."],[55.5,55.95,"Non Stop"],[56.0,56.8,"Spor Kulübü."],[57.1,58.0,"Değerlendirme için"],[58.1,59.6,"bize yazın."]
+      ];
+      const capsHost = document.getElementById("caps");
+      CAPS.forEach(([s, e, t], i) => {
+        const d = document.createElement("div");
+        d.className = "cap clip" + (s >= 52.4 ? " inv" : "");
+        d.style.inset = "auto"; d.style.left = "0"; d.style.right = "0"; d.style.top = "1590px";
+        d.id = "cap" + i;
+        d.setAttribute("data-start", String(s));
+        d.setAttribute("data-duration", String(Math.round((e - s) * 100) / 100));
+        d.setAttribute("data-track-index", "5");
+        const sp = document.createElement("span"); sp.textContent = t; d.appendChild(sp);
+        capsHost.appendChild(d);
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      const E = "power3.out";
+
+      // captions pop
+      CAPS.forEach(([s], i) => {
+        tl.fromTo("#cap" + i + " span", { y: 26, scale: 0.94, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2)" }, s);
+      });
+
+      // background drift
+      [["#b1", 60, 120], ["#b2", -50, 140], ["#b3", 70, -110], ["#b4", -60, -90]].forEach(([id, dx, dy]) => {
+        tl.fromTo(id, { x: 0, y: 0 }, { x: dx, y: dy, duration: 59.6, ease: "sine.inOut" }, 0);
+      });
+
+      // progress bar
+      const CH = [[0, 8.8], [8.8, 25.1], [25.1, 38.3], [38.3, 52.4], [52.4, 59.6]];
+      CH.forEach(([a, b], i) => {
+        tl.fromTo("#p" + i, { scaleX: 0 }, { scaleX: 1, duration: b - a, ease: "none" }, a);
+      });
+      tl.set("#p0,#p1,#p2,#p3,#p4", { backgroundColor: "#ffffff" }, 52.4);
+
+      // wipes
+      [[1, 8.55], [2, 24.85], [3, 38.05]].forEach(([n, t]) => {
+        tl.fromTo("#wp" + n, { x: 1300 }, { x: -1800, duration: 0.75, ease: "power2.inOut" }, t);
+      });
+      tl.fromTo("#wp4", { x: 1300 }, { x: -60, duration: 0.4, ease: "power2.in" }, 52.0);
+      tl.to("#wp4", { opacity: 0, duration: 0.01 }, 52.42);
+
+      function headline(sel, t) {
+        tl.fromTo(sel + " .ln", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, stagger: 0.12, ease: E }, t);
+      }
+      function dashes(p, t) {
+        tl.fromTo([p + "d1", p + "d2"], { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.4, stagger: 0.1, ease: E }, t);
+      }
+
+      // ===== S1 =====
+      headline("#s1h", 0.1); dashes("#s1", 0.5);
+      for (let i = 0; i <= 6; i++) tl.fromTo("#v" + i, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: E }, 0.6 + i * 0.08);
+      for (let i = 0; i <= 5; i++) tl.fromTo("#d" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: E }, 0.7 + i * 0.08);
+      // hernia at 2.6
+      tl.to("#d4", { backgroundColor: "#d63228", scaleX: 1.35, x: 22, duration: 0.4, ease: "back.out(2)" }, 2.6);
+      tl.fromTo("#pulse", { scale: 0.6, opacity: 0.9, transformOrigin: "50% 50%" }, { scale: 1.6, opacity: 0, duration: 0.8, ease: "power1.out" }, 2.75);
+      tl.fromTo("#pulse", { scale: 0.6, opacity: 0.9 }, { scale: 1.6, opacity: 0, duration: 0.8, ease: "power1.out", immediateRender: false }, 3.5);
+      tl.fromTo("#fitikTag", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: E }, 2.8);
+      // posture curve at 4.1
+      const curve = [26, 44, 50, 30, -6, -36, -52];
+      for (let i = 0; i <= 6; i++) tl.to("#v" + i, { x: curve[i], rotation: (i < 3 ? 6 : -6), duration: 0.8, ease: "sine.inOut" }, 4.1);
+      for (let i = 0; i <= 5; i++) tl.to("#d" + i, { x: (curve[i] + curve[i + 1]) / 2 + (i === 4 ? 22 : 0), duration: 0.8, ease: "sine.inOut" }, 4.1);
+      tl.to("#pulse", { x: -21, duration: 0.8, ease: "sine.inOut" }, 4.1);
+      tl.to("#fitikTag", { x: -21, duration: 0.8, ease: "sine.inOut" }, 4.1);
+      tl.fromTo("#postTag", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: E }, 4.4);
+      // pool arrives at 5.9 - water rises, spine relaxes
+      tl.fromTo("#s1water", { y: 0 }, { y: -770, duration: 1.1, ease: "power2.out" }, 5.9);
+      tl.fromTo("#s1wave", { x: 0 }, { x: -1080, duration: 3, ease: "none" }, 5.9);
+      for (let i = 0; i <= 6; i++) tl.to("#v" + i, { x: 0, rotation: 0, duration: 1.0, ease: "sine.inOut" }, 6.2);
+      for (let i = 0; i <= 5; i++) tl.to("#d" + i, { x: i === 4 ? 10 : 0, duration: 1.0, ease: "sine.inOut" }, 6.2);
+      tl.to("#d4", { scaleX: 1.12, backgroundColor: "#e0706a", duration: 1.0 }, 6.2);
+      tl.to(["#pulse", "#fitikTag", "#postTag"], { opacity: 0, duration: 0.4 }, 6.0);
+      tl.fromTo("#s1call", { y: 30, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 7.2);
+
+      // ===== S2 =====
+      headline("#s2h", 9.1); dashes("#s2", 9.5);
+      tl.fromTo("#s2k", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 9.7);
+      tl.set("#tankWater", { y: 560 }, 8.8);
+      tl.fromTo("#tank", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: E }, 10.0);
+      tl.fromTo(["#bigsub", "#n0", "#w0", ".meter"], { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: E }, 11.4);
+      tl.fromTo("#meterFill", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: E }, 11.6);
+      tl.set(["#n1", "#n2", "#n3", "#w1", "#w2", "#w3"], { opacity: 0 }, 8.8);
+      tl.fromTo("#tankWave", { x: 0 }, { x: -440, duration: 2.2, repeat: 6, ease: "none" }, 10.0);
+      const LV = [[14.6, 270, "#n1", "#w1", 0.55, "#2f6fd6"], [16.8, 196, "#n2", "#w2", 0.30, "#2f6fd6"], [19.1, 128, "#n3", "#w3", 0.08, "#d63228"]];
+      let prevN = "#n0", prevW = "#w0";
+      LV.forEach(([t, top, n, w, f, c]) => {
+        tl.to("#tankWater", { y: top, duration: 1.0, ease: "power2.inOut" }, t);
+        tl.to([prevN, prevW], { y: -30, opacity: 0, duration: 0.3 }, t);
+        tl.fromTo([n, w], { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: E }, t + 0.15);
+        tl.to("#meterFill", { scaleX: f, backgroundColor: c, duration: 0.9, ease: "power2.inOut" }, t);
+        prevN = n; prevW = w;
+      });
+      tl.fromTo("#s2card", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: E }, 12.7);
+      [[12.9, 0], [14.7, 1], [16.9, 2], [19.2, 3]].forEach(([t, i]) => {
+        tl.fromTo("#sb" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: E }, t);
+        tl.fromTo("#sv" + i, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.3 }, t + 0.5);
+      });
+      tl.fromTo("#s2call", { y: 30, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 22.0);
+      tl.fromTo("#s2foot", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 22.4);
+      // "hareket duruyor mu? hayır" - figure moves (arms swing) in water
+      tl.to("#tank svg g", { y: -10, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 23.2);
+
+      // ===== S3 =====
+      headline("#s3h", 25.5); dashes("#s3", 25.9);
+      tl.fromTo("#s3k", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 26.4);
+      tl.fromTo("#gauge", { scale: 0.8, opacity: 0, transformOrigin: "50% 100%" }, { scale: 1, opacity: 1, duration: 0.6, ease: E }, 26.6);
+      tl.fromTo([".needle", ".hub"], { opacity: 0 }, { opacity: 1, duration: 0.4 }, 26.8);
+      tl.fromTo("#needle", { rotation: -88 }, { rotation: -70, duration: 0.6, ease: E }, 26.8);
+      tl.fromTo("#s3card", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: E }, 27.4);
+      tl.set(["#g0", "#g1", "#g2", "#g3", "#r0", "#r1", "#r2", "#r3", "#rb0", "#rb1", "#rb2", "#rb3", "#rv0", "#rv1", "#rv2", "#rv3"], { opacity: 0 }, 25.1);
+      const ST = [[28.1, -62, 0], [28.8, -50, 1], [31.5, 4, 2], [33.2, 62, 3]];
+      ST.forEach(([t, rot, i]) => {
+        tl.to("#needle", { rotation: rot, duration: 0.7, ease: "back.out(1.6)" }, t);
+        if (i > 0) tl.to("#g" + (i - 1), { opacity: 0, y: -20, duration: 0.25 }, t);
+        tl.fromTo("#g" + i, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, t + 0.1);
+        tl.fromTo("#r" + i, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3 }, t);
+        tl.fromTo("#rb" + i, { opacity: 1, scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: E }, t + 0.05);
+        tl.fromTo("#rv" + i, { opacity: 0 }, { opacity: 1, duration: 0.3 }, t + 0.5);
+      });
+      // kelebek: needle trembles at high (repeated arching)
+      tl.to("#needle", { rotation: 72, duration: 0.25, yoyo: true, repeat: 5, ease: "sine.inOut" }, 34.0);
+      tl.fromTo("#s3call", { y: 30, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 36.0);
+
+      // ===== S4 =====
+      headline("#s4h", 38.6); dashes("#s4", 39.0);
+      tl.fromTo("#s4k", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 40.0);
+      tl.set(["#st0", "#st1", "#st2", "#st3", "#st4"], { opacity: 0 }, 38.3);
+      tl.set(["#ck0", "#ck1", "#ck2", "#ck3", "#ck4"], { scale: 0 }, 38.3);
+      tl.fromTo("#rail", { scaleY: 0 }, { scaleY: 1, duration: 7.4, ease: "none" }, 41.4);
+      const SP = [41.4, 42.8, 44.6, 46.5, 48.3];
+      SP.forEach((t, i) => {
+        tl.fromTo("#st" + i, { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: E }, t);
+        tl.fromTo("#ck" + i, { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.35, ease: "back.out(2.4)" }, (SP[i + 1] || 49.6) - 0.1);
+      });
+      tl.fromTo("#s4call", { y: 30, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 50.1);
+
+      // ===== S5 =====
+      tl.set("#badge", { opacity: 1 }, 0);
+      headline("#s5h", 52.7); dashes("#s5", 53.2);
+      tl.fromTo("#ringC", { attr: { "stroke-dashoffset": 1332 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.0, ease: "power2.inOut" }, 55.3);
+      tl.fromTo("#bigLogo", { scale: 0.86, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.8, ease: E }, 55.5);
+      tl.fromTo("#tag", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 56.1);
+      tl.fromTo("#cta", { opacity: 0, y: 30, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 57.1);
+      tl.fromTo("#note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 57.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
