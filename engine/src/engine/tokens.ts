@@ -22,8 +22,6 @@ export const color = {
   gold: '#f6b928',
 } as const;
 
-export type ColorToken = keyof typeof color;
-
 export const font = {
   display: 'NS Display',
   text: 'NS Display',
