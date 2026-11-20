@@ -1,0 +1,48 @@
+{
+  "baslik": "NON STOP giriş videosu",
+  "dosya_adi": "NonStop_Giris",
+  "sure": 7.5,
+  "bitis": false,
+  "ust_bar": false,
+  "altyazi": [],
+  "sahneler": [
+    {
+      "tip": "medya",
+      "yerlesim": "tam",
+      "bas": 0,
+      "son": 3.0,
+      "kaynak": "havuz_dalis.mp4",
+      "manset": [
+        "Suya güvenle gir,",
+        "*durmadan* yüz."
+      ],
+      "ust": "NON STOP SPOR KULÜBÜ",
+      "manset_an": 0.25
+    },
+    {
+      "tip": "kapanis",
+      "bas": 3.0,
+      "son": 7.5,
+      "manset": [
+        "Suda güven,",
+        "hayatta denge."
+      ],
+      "manset_an": 3.15,
+      "logo_an": 3.7,
+      "slogan": "SPOR HERKES İÇİN",
+      "slogan_an": 4.4,
+      "cagri": "Bilgi için bize yazın.",
+      "cagri_an": 5.0
+    }
+  ],
+  "kapak": {
+    "etiket": "NON STOP SPOR KULÜBÜ",
+    "manset": [
+      "Suya güvenle gir,",
+      "*durmadan* yüz."
+    ],
+    "alt": "Spor herkes için!",
+    "buton": "Bilgi için bize yazın ▶",
+    "arka_gorsel": "kapak_arka.jpg"
+  }
+}

@@ -35,6 +35,8 @@ html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; backgro
 .hl .ln { display: block; }
 .hl em { font-style: normal; color: var(--blue); }
 .light, .light .hl { color: #fff; }
+.light .hl em { color: var(--sky); }
+.light .kicker { color: #fff; opacity: 0.9; }
 .dash { position: absolute; height: 8px; border-radius: 4px; }
 .kicker { position: absolute; left: 72px; font-size: 24px; font-weight: 700; letter-spacing: 0.2em; color: var(--blue); }
 .callout { position: absolute; left: 72px; padding: 18px 30px; border-radius: 18px; background: var(--yellow); color: var(--navy); font-size: 36px; font-weight: 700; box-shadow: 0 10px 24px rgba(246,185,40,0.35); }

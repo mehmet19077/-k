@@ -72,6 +72,7 @@ function manset(sc, id, top = 250) {
 }
 
 const S = []; // sahne html
+const PRE = []; // sahne dışı medya (video) öğeleri
 const T = []; // gsap satırları
 const t = (s) => T.push(s);
 
@@ -201,8 +202,9 @@ const SAHNE = {
     let html = "";
     const box = full ? `left:0;top:0;width:${W}px;height:${H}px` : `left:72px;top:${sc.kart_ust || 600}px;width:936px;height:${sc.kart_yukseklik || 760}px;border-radius:30px;overflow:hidden;box-shadow:0 22px 50px rgba(11,26,61,0.18)`;
     html += `<div class="abs" id="${id}box" style="${box}">`;
-    if (isVid) html += `<video id="${id}vid" class="clip" src="${src}" muted playsinline data-start="${sc.bas}" data-duration="${dur}" data-media-start="${sc.medya_bas || 0}" style="width:100%;height:100%;object-fit:cover"></video>`;
-    else html += `<img id="${id}img" src="${src}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />`;
+    if (isVid) PRE.push(`<video id="${id}vid" class="clip" src="${src}" muted playsinline data-start="${sc.bas}" data-duration="${dur}" data-media-start="${sc.medya_bas || 0}" data-track-index="1" style="${full ? `inset:0;width:${W}px;height:${H}px` : `inset:auto;left:72px;top:${sc.kart_ust || 600}px;width:936px;height:${sc.kart_yukseklik || 760}px;border-radius:30px`};object-fit:cover"></video>`);
+    if (isVid && !full) t(`tl.fromTo("#${id}vid",{y:60,opacity:0},{y:0,opacity:1,duration:0.6,ease:E},${r2(sc.bas + 0.3)});`);
+    if (!isVid) html += `<img id="${id}img" src="${src}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />`;
     if (full) html += `<div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(11,26,61,0.72) 0%,rgba(11,26,61,0.15) 38%,rgba(11,26,61,0.0) 60%,rgba(11,26,61,0.55) 100%)"></div>`;
     html += `</div>`;
     if (!isVid) t(`tl.fromTo("#${id}img",{scale:1.0},{scale:1.12,duration:${dur},ease:"none"},${sc.bas});`);
@@ -314,8 +316,9 @@ function videoKur(projDir) {
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="${total}" data-width="${W}" data-height="${H}">
 ${bg}
+${PRE.join("\n")}
 ${S.join("\n")}
-${top}
+${C.ust_bar === false ? "" : top}
 ${caps}
 ${wipes}
 ${bitisHtml}
