@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "historyId": "e13870e0-edb2-48a3-93c4-9083cf6fedeb",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "61702e1e35363d6b02a4599a7ee7cab9561e68ae5d0dbb8b6ac424a5dd1e03df",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/61/61702e1e35363d6b02a4599a7ee7cab9561e68ae5d0dbb8b6ac424a5dd1e03df"
+    },
+    "marka/bitis_16x9.mp4": {
+      "hash": "c3913a385ea998842ee0656f95122b5bc8e9b44a71bc7dc84e6bccd0e33d0414",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/c3/c3913a385ea998842ee0656f95122b5bc8e9b44a71bc7dc84e6bccd0e33d0414"
+    },
+    "marka/bitis_1x1.mp4": {
+      "hash": "4d34879701d0a5d9972a142def61a486390d00faa4f70dea1f38281b7764dc07",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/4d/4d34879701d0a5d9972a142def61a486390d00faa4f70dea1f38281b7764dc07"
+    },
+    "marka/bitis_9x16.mp4": {
+      "hash": "d6ddca958a1fd2523fcf15e1547605e75fa86b405b814a8c243e08f5d3f39d3c",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/d6/d6ddca958a1fd2523fcf15e1547605e75fa86b405b814a8c243e08f5d3f39d3c"
+    },
+    "marka/fonts/poppins-latin-400-normal.woff2": {
+      "hash": "7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/7d/7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f"
+    },
+    "marka/fonts/poppins-latin-500-normal.woff2": {
+      "hash": "cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/cd/cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446"
+    },
+    "marka/fonts/poppins-latin-600-normal.woff2": {
+      "hash": "f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/f4/f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149"
+    },
+    "marka/fonts/poppins-latin-700-normal.woff2": {
+      "hash": "9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/93/9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526"
+    },
+    "marka/fonts/poppins-latin-800-normal.woff2": {
+      "hash": "60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/60/60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2"
+    },
+    "marka/fonts/poppins-latin-ext-400-normal.woff2": {
+      "hash": "a526dac26fcc645d428764b07fd6ae2ad3399129b75c22c8e149278157291189",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/a5/a526dac26fcc645d428764b07fd6ae2ad3399129b75c22c8e149278157291189"
+    },
+    "marka/fonts/poppins-latin-ext-500-normal.woff2": {
+      "hash": "75cd1c2bbd47db72c1a7a720e764c7672a95bdae7033c570d549ac88c9add234",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/75/75cd1c2bbd47db72c1a7a720e764c7672a95bdae7033c570d549ac88c9add234"
+    },
+    "marka/fonts/poppins-latin-ext-600-normal.woff2": {
+      "hash": "26fd27fb6bb1dc4c64a687124cc328a5ed13d89155dbfcd218eda64a45835174",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/26/26fd27fb6bb1dc4c64a687124cc328a5ed13d89155dbfcd218eda64a45835174"
+    },
+    "marka/fonts/poppins-latin-ext-700-normal.woff2": {
+      "hash": "3d52320b7513a9e20df42e02b61709b91a5c2c2a25708225c664eb4639f3b0fd",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/3d/3d52320b7513a9e20df42e02b61709b91a5c2c2a25708225c664eb4639f3b0fd"
+    },
+    "marka/fonts/poppins-latin-ext-800-normal.woff2": {
+      "hash": "9bf9d6226d07c80b9959aacc55cf2c768e9e20d1787942efc11432d7c137040b",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/9b/9bf9d6226d07c80b9959aacc55cf2c768e9e20d1787942efc11432d7c137040b"
+    },
+    "marka/gsap.min.js": {
+      "hash": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/92/92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    "marka/logo.png": {
+      "hash": "cc349daea8f44e7e23745227aa361036f9f7663e037adb844b73798f7426beaa",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/cc/cc349daea8f44e7e23745227aa361036f9f7663e037adb844b73798f7426beaa"
+    },
+    "marka/stil.css": {
+      "hash": "e8d3571c0f25d0ababbddb59977e98400feea6c591577bd167841649aeac92fa",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/e8/e8d3571c0f25d0ababbddb59977e98400feea6c591577bd167841649aeac92fa"
+    },
+    "meta.json": {
+      "hash": "21f8659f9580c0ab12869480c113cf2f5026078e0e591c6b4e9a2da66ffbe565",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/21/21f8659f9580c0ab12869480c113cf2f5026078e0e591c6b4e9a2da66ffbe565"
+    },
+    "package.json": {
+      "hash": "0f472db0728cd0013ad1b0bb60429e22f44a63774296fd726013af5a114c983c",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/0f/0f472db0728cd0013ad1b0bb60429e22f44a63774296fd726013af5a114c983c"
+    },
+    "medya/ses.m4a": {
+      "hash": "1eb634cbaf64b57a7e44ad02f7a64066e84c7fbb875fdf8e165a9326be384533",
+      "content": "/root/.cache/hyperframes/history/e13870e0-edb2-48a3-93c4-9083cf6fedeb/blobs/1e/1eb634cbaf64b57a7e44ad02f7a64066e84c7fbb875fdf8e165a9326be384533"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-5"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-0",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-00-at-6s.png",
+        "time": 6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "e5b35f7ec5ecc80d752dee8cc026eff35d125c4d77803f1c0080c63dd189c67c",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-1",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-01-at-20s.png",
+        "time": 20,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "9610fa1784c833ddde2e57d8ec244eb3638fd41ad69a2e3f5ed04e88c1bc7068",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-2",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-02-at-34.5s.png",
+        "time": 34.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "9b55fc2f357556b3213d000f40ff27143890274d678df452cf16f0b4563cd098",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-3",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-03-at-49s.png",
+        "time": 49,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "1a6d9c8e5b5568ce75dc9e0acb18c73e3d10850e88d2856310ae4bfd262c4f64",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-4",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-04-at-58s.png",
+        "time": 58,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "9c74e45713cf92ea98b7309f0ce2fa707204c1b1d9d0d0c92437b94fcf41525a",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "954d3f9e-ced7-4164-8317-3ec573feb0cb-5",
+        "image": "/home/user/-k/sablon/icerik/saglik-yuzme/cikti/kareler/frame-05-at-62s.png",
+        "time": 62,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795164243316,
+        "contentHash": "0868d69e9a08ab6bf92aa0fafb8c66de698509e6125183c64180f5ba5367b63e",
+        "revision": null,
+        "inputFingerprint": "cfdda03621c567c88f9962e99f0eedcb41f92568a878e790bd4b4ef03beaaf99",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

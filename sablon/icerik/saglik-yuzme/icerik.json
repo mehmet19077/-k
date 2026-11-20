@@ -1,0 +1,534 @@
+{
+  "baslik": "Sağlık: Bel fıtığı ve yüzme",
+  "dosya_adi": "Saglik_Yuzme",
+  "ses": "ses.m4a",
+  "sure": 59.6,
+  "bitis": true,
+  "altyazi": [
+    [
+      0.1,
+      1.2,
+      "Doktorunuz, yüzmeye"
+    ],
+    [
+      1.3,
+      2.4,
+      "başlayın dedi."
+    ],
+    [
+      2.6,
+      3.9,
+      "Belinizde fıtık var"
+    ],
+    [
+      4.1,
+      5.6,
+      "ya da duruşunuz bozulmuş."
+    ],
+    [
+      5.9,
+      7.0,
+      "Havuza geldiniz."
+    ],
+    [
+      7.2,
+      7.7,
+      "Peki şimdi"
+    ],
+    [
+      7.8,
+      8.6,
+      "ne yapacaksınız?"
+    ],
+    [
+      9.1,
+      9.9,
+      "Suyun işi"
+    ],
+    [
+      10.0,
+      10.4,
+      "tam burada"
+    ],
+    [
+      10.5,
+      11.2,
+      "başlıyor."
+    ],
+    [
+      11.4,
+      12.6,
+      "Karada, ağırlığınızın"
+    ],
+    [
+      12.7,
+      13.5,
+      "tamamını siz"
+    ],
+    [
+      13.6,
+      14.4,
+      "taşıyorsunuz."
+    ],
+    [
+      14.6,
+      15.4,
+      "Bel hizasında"
+    ],
+    [
+      15.5,
+      16.5,
+      "suda, yarısını."
+    ],
+    [
+      16.8,
+      17.9,
+      "Göğüs hizasında"
+    ],
+    [
+      18.0,
+      18.9,
+      "üçte birini."
+    ],
+    [
+      19.1,
+      20.2,
+      "Boyun hizasında,"
+    ],
+    [
+      20.3,
+      21.7,
+      "neredeyse hiçbirini."
+    ],
+    [
+      22.0,
+      22.9,
+      "Yük azalıyor."
+    ],
+    [
+      23.2,
+      23.8,
+      "Ama hareket"
+    ],
+    [
+      23.9,
+      24.8,
+      "duruyor mu? Hayır."
+    ],
+    [
+      25.5,
+      26.2,
+      "Ama dikkat."
+    ],
+    [
+      26.4,
+      26.9,
+      "Her kulaç"
+    ],
+    [
+      27.0,
+      27.8,
+      "aynı değil."
+    ],
+    [
+      28.1,
+      28.7,
+      "Sırtüstü ve"
+    ],
+    [
+      28.8,
+      29.5,
+      "serbest, bel"
+    ],
+    [
+      29.6,
+      30.0,
+      "için en"
+    ],
+    [
+      30.1,
+      31.1,
+      "güvenli olanlar."
+    ],
+    [
+      31.5,
+      32.7,
+      "Kurbağalama teknik ister."
+    ],
+    [
+      33.2,
+      33.8,
+      "Kelebek ise"
+    ],
+    [
+      33.9,
+      34.5,
+      "beli tekrar"
+    ],
+    [
+      34.6,
+      35.6,
+      "tekrar geriyor."
+    ],
+    [
+      36.0,
+      36.7,
+      "Yanlış kulaç,"
+    ],
+    [
+      36.8,
+      38.0,
+      "faydayı tersine çevirir."
+    ],
+    [
+      38.6,
+      39.0,
+      "İşte tam"
+    ],
+    [
+      39.1,
+      39.9,
+      "burada devreye"
+    ],
+    [
+      40.0,
+      41.0,
+      "biz giriyoruz."
+    ],
+    [
+      41.4,
+      42.5,
+      "Hekim raporunuzu okuruz."
+    ],
+    [
+      42.8,
+      44.3,
+      "Suda değerlendirme yaparız."
+    ],
+    [
+      44.6,
+      45.1,
+      "Size uygun"
+    ],
+    [
+      45.2,
+      46.1,
+      "kulacı seçeriz."
+    ],
+    [
+      46.5,
+      47.3,
+      "Tekniği sıfırdan"
+    ],
+    [
+      47.4,
+      48.1,
+      "öğretiriz."
+    ],
+    [
+      48.3,
+      49.0,
+      "Yükü kademeli"
+    ],
+    [
+      49.1,
+      49.8,
+      "artırırız."
+    ],
+    [
+      50.1,
+      50.7,
+      "Tek başınıza"
+    ],
+    [
+      50.8,
+      51.5,
+      "değil, antrenör"
+    ],
+    [
+      51.6,
+      52.3,
+      "gözetiminde."
+    ],
+    [
+      52.7,
+      53.3,
+      "Doktorunuzun"
+    ],
+    [
+      53.4,
+      54.4,
+      "önerisini programa"
+    ],
+    [
+      54.5,
+      55.2,
+      "çeviriyoruz."
+    ],
+    [
+      55.5,
+      55.95,
+      "Non Stop"
+    ],
+    [
+      56.0,
+      56.8,
+      "Spor Kulübü."
+    ],
+    [
+      57.1,
+      58.0,
+      "Değerlendirme için"
+    ],
+    [
+      58.1,
+      59.6,
+      "bize yazın."
+    ]
+  ],
+  "sahneler": [
+    {
+      "tip": "metin",
+      "bolum": "DURUM",
+      "bas": 0,
+      "son": 8.8,
+      "manset": [
+        "Bel fıtığı.",
+        "Postür bozukluğu.",
+        "Doktor: «*Yüzün.*»"
+      ],
+      "maddeler": [
+        {
+          "yazi": "Belinizde fıtık var",
+          "an": 2.6,
+          "renk": "kirmizi"
+        },
+        {
+          "yazi": "Duruşunuz bozulmuş",
+          "an": 4.1,
+          "renk": "mavi"
+        },
+        {
+          "yazi": "Havuza geldiniz",
+          "an": 5.9,
+          "renk": "mavi"
+        }
+      ],
+      "vurgu": {
+        "yazi": "Peki havuzda ne yapacaksınız?",
+        "an": 7.2
+      }
+    },
+    {
+      "tip": "cubuk",
+      "bolum": "NEDEN SU",
+      "bas": 8.8,
+      "son": 25.1,
+      "manset": [
+        "Suda ağırlığınızı",
+        "su taşır."
+      ],
+      "ust": "AYAKTA DURURKEN TAŞINAN VÜCUT AĞIRLIĞI",
+      "satirlar": [
+        {
+          "etiket": "Karada",
+          "deger": 1,
+          "yazi": "%100",
+          "renk": "lacivert",
+          "an": 11.4
+        },
+        {
+          "etiket": "Bel hizası",
+          "deger": 0.55,
+          "yazi": "%50–60",
+          "renk": "mavi",
+          "an": 14.6
+        },
+        {
+          "etiket": "Göğüs hizası",
+          "deger": 0.3,
+          "yazi": "%25–35",
+          "renk": "mavi",
+          "an": 16.8
+        },
+        {
+          "etiket": "Boyun hizası",
+          "deger": 0.08,
+          "yazi": "%6–10",
+          "renk": "kirmizi",
+          "an": 19.1
+        }
+      ],
+      "vurgu": {
+        "yazi": "Yük azalır, hareket kalır.",
+        "an": 22.0
+      },
+      "dipnot": "Harrison & Bulstrode · hidroterapi havuzu ölçümü · şematik"
+    },
+    {
+      "tip": "gosterge",
+      "bolum": "AMA",
+      "bas": 25.1,
+      "son": 38.3,
+      "manset": [
+        "Ama her kulaç",
+        "aynı değil."
+      ],
+      "ust": "BELİ AŞIRI GERME RİSKİ · ŞEMATİK",
+      "durumlar": [
+        {
+          "etiket": "Sırtüstü · düşük",
+          "seviye": 0.1,
+          "renk": "mavi",
+          "an": 28.1
+        },
+        {
+          "etiket": "Serbest · düşük",
+          "seviye": 0.17,
+          "renk": "mavi",
+          "an": 28.8
+        },
+        {
+          "etiket": "Kurbağalama · orta",
+          "seviye": 0.52,
+          "renk": "turuncu",
+          "an": 31.5
+        },
+        {
+          "etiket": "Kelebek · yüksek",
+          "seviye": 0.92,
+          "renk": "kirmizi",
+          "an": 33.2,
+          "titreme": true
+        }
+      ],
+      "satirlar": [
+        {
+          "etiket": "Sırtüstü",
+          "deger": 0.3,
+          "yazi": "düşük",
+          "renk": "mavi",
+          "an": 28.1
+        },
+        {
+          "etiket": "Serbest",
+          "deger": 0.38,
+          "yazi": "düşük",
+          "renk": "mavi",
+          "an": 28.8
+        },
+        {
+          "etiket": "Kurbağalama",
+          "deger": 0.65,
+          "yazi": "orta",
+          "renk": "turuncu",
+          "an": 31.5
+        },
+        {
+          "etiket": "Kelebek",
+          "deger": 0.9,
+          "yazi": "yüksek",
+          "renk": "kirmizi",
+          "an": 33.2
+        }
+      ],
+      "vurgu": {
+        "yazi": "Yanlış kulaç, faydayı tersine çevirir.",
+        "an": 36.0
+      }
+    },
+    {
+      "tip": "adimlar",
+      "bolum": "PROGRAM",
+      "bas": 38.3,
+      "son": 52.4,
+      "manset": [
+        "İşte tam burada",
+        "devreye biz giriyoruz."
+      ],
+      "ust": "NON STOP SU İÇİ PROGRAMI",
+      "adimlar": [
+        {
+          "baslik": "Hekim raporunuzu okuruz",
+          "aciklama": "Tanı ve kısıtlar netleşir",
+          "an": 41.4
+        },
+        {
+          "baslik": "Suda değerlendirme yaparız",
+          "aciklama": "Hareket açıklığı ve güven",
+          "an": 42.8
+        },
+        {
+          "baslik": "Size uygun kulacı seçeriz",
+          "aciklama": "Belinizi koruyan teknik",
+          "an": 44.6
+        },
+        {
+          "baslik": "Tekniği sıfırdan öğretiriz",
+          "aciklama": "Doğru nefes, doğru gövde",
+          "an": 46.5
+        },
+        {
+          "baslik": "Yükü kademeli artırırız",
+          "aciklama": "Adım adım, ölçerek",
+          "an": 48.3
+        }
+      ],
+      "vurgu": {
+        "yazi": "Antrenör gözetiminde, tek tek.",
+        "an": 50.1
+      }
+    },
+    {
+      "tip": "kapanis",
+      "bolum": "BAŞLANGIÇ",
+      "bas": 52.4,
+      "son": 59.6,
+      "manset": [
+        "Doktorunuzun önerisini",
+        "programa çeviriyoruz."
+      ],
+      "logo_an": 55.5,
+      "slogan": "SPOR HERKES İÇİN",
+      "slogan_an": 56.1,
+      "cagri": "Değerlendirme için bize yazın.",
+      "cagri_an": 57.1,
+      "not": "Bu içerik tıbbi tavsiye değildir. Programlar hekim onayı ve raporuyla uygulanır."
+    }
+  ],
+  "kapak": {
+    "etiket": "BEL FITIĞI · POSTÜR",
+    "manset": [
+      "Doktor",
+      "«*Yüzün*» dedi."
+    ],
+    "alt": "Ama her kulaç aynı değil!",
+    "satirlar": [
+      {
+        "etiket": "Sırtüstü",
+        "deger": 0.38,
+        "yazi": "düşük",
+        "renk": "mavi"
+      },
+      {
+        "etiket": "Serbest",
+        "deger": 0.48,
+        "yazi": "düşük",
+        "renk": "mavi"
+      },
+      {
+        "etiket": "Kurbağalama",
+        "deger": 0.78,
+        "yazi": "orta",
+        "renk": "turuncu"
+      },
+      {
+        "etiket": "Kelebek",
+        "deger": 0.95,
+        "yazi": "yüksek",
+        "renk": "kirmizi"
+      }
+    ],
+    "buton": "Hangi kulaç size uygun? ▶"
+  }
+}

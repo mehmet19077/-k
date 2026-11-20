@@ -1,0 +1,16 @@
+{
+  "baslik": "Şablon örneği",
+  "dosya_adi": "Sablon_Ornek_4sn",
+  "sure": 4,
+  "bitis": false,
+  "altyazi": [[0.3, 1.5, "Suda ağırlığınızı"], [1.6, 2.6, "su taşır."], [2.7, 4.0, "Yük azalır."]],
+  "sahneler": [
+    {"tip": "cubuk", "bolum": "NEDEN SU", "bas": 0, "son": 4,
+     "manset": ["Suda ağırlığınızı", "*su* taşır."], "ust": "AYAKTA DURURKEN TAŞINAN VÜCUT AĞIRLIĞI",
+     "satirlar": [
+       {"etiket": "Karada", "deger": 1, "yazi": "%100", "renk": "lacivert", "an": 0.9},
+       {"etiket": "Bel hizası", "deger": 0.55, "yazi": "%50–60", "renk": "mavi", "an": 1.3},
+       {"etiket": "Boyun hizası", "deger": 0.08, "yazi": "%6–10", "renk": "kirmizi", "an": 1.7}],
+     "vurgu": {"yazi": "Yük azalır, hareket kalır.", "an": 2.6}}
+  ]
+}
