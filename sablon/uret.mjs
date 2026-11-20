@@ -252,7 +252,21 @@ function videoKur(projDir) {
   const total = r2(anaSure + (bitis ? BIT : 0));
 
   let altyazi = C.altyazi || [];
+  // Seslendirme varsa ve altyazı verilmemişse: otomatik Türkçe yazıya dökme (bir kez yapılır, transcript.json'a kaydedilir)
+  if (!altyazi.length && !C.altyazi_dosya && ses && C.otomatik_altyazi !== false) {
+    const tj = path.join(dir, "transcript.json");
+    if (!fs.existsSync(tj)) {
+      console.log("Seslendirme yazıya dökülüyor (ilk seferde model indirilir)...");
+      execFileSync("npx", ["--yes", HF, "transcribe", ses, "--model", C.altyazi_model || "small", "--language", "tr"],
+        { stdio: "inherit", env: { ...process.env, NODE_USE_ENV_PROXY: "1" } });
+    }
+    C.altyazi_dosya = "transcript.json";
+  }
   if (!altyazi.length && C.altyazi_dosya) altyazi = altyaziTranskripttten(path.join(dir, C.altyazi_dosya));
+  // Yanlış duyulan kelimeler için düzeltme listesi: { "Kurbalama": "Kurbağalama" }
+  const DZ = C.duzeltmeler || {};
+  altyazi = altyazi.map(([s, e, txt]) => [s, e, Object.entries(DZ).reduce((a, [k, v]) => a.split(k).join(v), txt)]);
+  if (C.altyazi_dosya) fs.writeFileSync(path.join(dir, "altyazi_kontrol.txt"), altyazi.map(([s, e, x]) => `${s.toFixed(2)}-${e.toFixed(2)}  ${x}`).join("\n"));
 
   // sahneler
   scenes.forEach((sc, i) => {
