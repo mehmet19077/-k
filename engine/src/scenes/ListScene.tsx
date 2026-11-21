@@ -18,6 +18,8 @@ export const listSchema = z.object({
   /** First item time and spacing in seconds: one item per beat. */
   start: z.number().default(0.5),
   beat: z.number().default(0.55),
+  /** Explicit item times (e.g. word onsets of a voice-over); overrides start/beat. */
+  times: z.array(z.number()).optional(),
 });
 
 /**
@@ -25,12 +27,13 @@ export const listSchema = z.object({
  * outlined index, the label hitting in with a micro camera kick, and a
  * rule that draws under it. Built for drills, steps, features.
  */
-export const ListScene: React.FC<z.infer<typeof listSchema>> = ({ kicker, items, start, beat, accent }) => {
+export const ListScene: React.FC<z.infer<typeof listSchema>> = ({ kicker, items, start, beat, times, accent }) => {
   const L = useLayout();
   const { t, duration, unit } = L;
   const accentColor = color[accent ?? 'signal'];
+  const itemAt = (i: number) => times?.[i] ?? start + i * beat;
   const kick = items.reduce(
-    (cam, _, i) => addCamera(cam, impactShake(`list${i}`, t, start + i * beat, 7, 0.25)),
+    (cam, _, i) => addCamera(cam, impactShake(`list${i}`, t, itemAt(i), 7, 0.25)),
     cameraAt([{ t: 0, zoom: 1.02 }, { t: duration, zoom: 1.1 }], t),
   );
   const rowH = Math.min(190, (L.h * 0.62) / items.length);
@@ -45,7 +48,7 @@ export const ListScene: React.FC<z.infer<typeof listSchema>> = ({ kicker, items,
             <Text text={kicker} size="kicker" weight={600} tracking="whisper" color={color.caustic} move="Rise" at={0.1} upper />
             <div style={{ height: 40 * unit }} />
             {items.map((item, i) => {
-              const at = start + i * beat;
+              const at = itemAt(i);
               const rule = interpolate(t, [at + 0.08, at + 0.5], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease.wipe });
               return (
                 <div key={i} style={{ position: 'relative', height: rowH * unit, display: 'flex', alignItems: 'center', gap: 34 * unit }}>

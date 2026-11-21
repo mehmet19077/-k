@@ -16,6 +16,8 @@ export const soundCueSchema = z.object({
   /** Seconds from the start of the scene (may be negative to lead in). */
   at: z.number(),
   volume: z.number().min(0).max(2).default(1),
+  /** Voice-over: seconds during which the music is ducked under this cue. */
+  duck: z.number().min(0).optional(),
 });
 export type SoundCue = z.infer<typeof soundCueSchema>;
 
