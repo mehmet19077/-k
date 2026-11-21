@@ -5,7 +5,7 @@ import { color } from '../tokens';
 export const colorToken = z.enum(Object.keys(color) as [keyof typeof color, ...(keyof typeof color)[]]);
 
 export const transitionSchema = z.object({
-  type: z.enum(['cut', 'whip', 'flash', 'push', 'dissolve', 'wipe']),
+  type: z.enum(['cut', 'whip', 'flash', 'push', 'dissolve', 'wipe', 'zoom', 'rewind', 'leak']),
   duration: z.number().min(0).max(3),
   direction: z.enum(['left', 'right', 'up', 'down']).optional(),
 });

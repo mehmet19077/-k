@@ -24,6 +24,7 @@ const palette: Record<string, () => ReturnType<typeof sfx.impact>> = {
   glint: sfx.glint,
   sub: sfx.sub,
   hit: sfx.hit,
+  rewind: () => sfx.rewind(0.65),
 };
 
 for (const [name, make] of Object.entries(palette)) {

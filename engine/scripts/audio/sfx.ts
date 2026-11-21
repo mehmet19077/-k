@@ -168,3 +168,24 @@ export const hit = (): Stereo => {
   }
   return peakNormalize(out, -2);
 };
+
+/** Tape rewind: warbling, pitch-swept noise for the rewind transition. */
+export const rewind = (len = 0.65): Stereo => {
+  const out = buffer(len);
+  const r = rng(83);
+  const f = svf();
+  let ph = 0;
+  for (let i = 0; i < out.L.length; i++) {
+    const t = i / SR;
+    const k = t / len;
+    const freq = 900 + 2600 * Math.sin(Math.PI * k) + 400 * Math.sin(t * 90);
+    ph += (2 * Math.PI * freq) / SR;
+    const tone = Math.sin(ph) * 0.25;
+    const noise = f(r() * 2 - 1, freq, 0.6).band;
+    const a = Math.sin(Math.PI * k) * (0.7 + 0.3 * Math.sin(t * 140));
+    const [l, rr] = pan((tone + noise) * a, -0.6 + 1.2 * k);
+    out.L[i] = l;
+    out.R[i] = rr;
+  }
+  return peakNormalize(out, -3);
+};
