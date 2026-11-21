@@ -21,6 +21,20 @@ export const soundCueSchema = z.object({
 });
 export type SoundCue = z.infer<typeof soundCueSchema>;
 
+/**
+ * Voice-over line of a scene. Write `text` and `at`; `npm run voice`
+ * generates the audio with the brand voice (voice.config.json) and fills
+ * in `src` and `duration`.
+ */
+export const voiceSchema = z.object({
+  text: z.string(),
+  /** Seconds from the start of the scene. */
+  at: z.number(),
+  src: z.string().optional(),
+  duration: z.number().optional(),
+  volume: z.number().min(0).max(2).default(1),
+});
+
 export const sceneBase = {
   id: z.string(),
   /** Seconds, including the incoming transition overlap. */
@@ -29,4 +43,5 @@ export const sceneBase = {
   transition: transitionSchema.optional(),
   accent: colorToken.optional(),
   sound: z.array(soundCueSchema).optional(),
+  voice: voiceSchema.optional(),
 };

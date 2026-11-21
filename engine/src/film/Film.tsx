@@ -44,7 +44,14 @@ export const Film: React.FC<FilmSpec> = (film) => {
         fps={fps}
         totalFrames={timeline.totalFrames}
         music={film.music}
-        cues={film.scenes.map((s, i) => ({ entry: timeline.entries[i], cues: s.sound ?? [] }))}
+        cues={film.scenes.map((s, i) => ({
+          entry: timeline.entries[i],
+          cues: [
+            ...(s.sound ?? []),
+            // A generated voice line plays as a cue and ducks the music for its length.
+            ...(s.voice?.src ? [{ src: s.voice.src, at: s.voice.at, volume: s.voice.volume, duck: s.voice.duration }] : []),
+          ],
+        }))}
       />
     </AbsoluteFill>
   );

@@ -8,7 +8,8 @@
     "audio": "node scripts/generate-audio.ts",
     "typecheck": "tsc --noEmit",
     "stills": "node scripts/stills.ts",
-    "render": "node scripts/render.ts"
+    "render": "node scripts/render.ts",
+    "voice": "node scripts/voice.ts"
   },
   "dependencies": {
     "@remotion/cli": "4.0.545",
