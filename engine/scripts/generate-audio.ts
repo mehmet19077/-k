@@ -34,6 +34,7 @@ for (const [name, make] of Object.entries(palette)) {
 const films: Record<string, string> = {
   'disiplin-score': 'src/films/disiplin.json',
   'kara-antrenman-score': 'src/films/kara-antrenman.json',
+  'havuz-score': 'src/films/havuz.json',
 };
 for (const [name, file] of Object.entries(films)) {
   const film = JSON.parse(readFileSync(join(root, file), 'utf8')) as ScoreFilm;

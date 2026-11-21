@@ -44,4 +44,6 @@ export const sceneBase = {
   accent: colorToken.optional(),
   sound: z.array(soundCueSchema).optional(),
   voice: voiceSchema.optional(),
+  /** Music section this scene plays under (defaults to the scene type). */
+  score: z.enum(['hook', 'movement', 'editorial', 'impact', 'statement', 'outro', 'list', 'photo']).optional(),
 };

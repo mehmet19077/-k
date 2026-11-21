@@ -6,7 +6,16 @@
 import { computeTimeline } from '../../src/engine/scene/timeline.ts';
 import { buffer, lowpass, mix, pan, peakNormalize, reverb, rng, sat, SR, type Stereo } from './dsp.ts';
 
-type Scene = { id: string; type: string; duration: number; transition?: { type: string; duration: number } };
+type Scene = {
+  id: string;
+  type: string;
+  duration: number;
+  transition?: { type: string; duration: number };
+  /** Music section override. */
+  score?: string;
+  /** Scene second of a hit: the section starts exactly there. */
+  hit?: number;
+};
 export type ScoreFilm = { scenes: Scene[] };
 
 const NOTE = { D2: 73.42, F2: 87.31, A2: 110, Bb2: 116.54, C3: 130.81, D3: 146.83, F3: 174.61, Fs3: 185, A3: 220, C4: 261.63, D5: 587.33, F5: 698.46, A5: 880, C6: 1046.5 };
@@ -153,11 +162,17 @@ const water = (out: Stereo, gain: number) => {
 export const buildScore = (film: ScoreFilm, fps: number, bpm = 120): Stereo => {
   const { entries, totalFrames } = computeTimeline(film, fps);
   const total = totalFrames / fps;
-  // A section runs from the frame its scene becomes fully visible (after the incoming transition).
-  const sections: Section[] = entries.map((e, i) => ({
-    type: film.scenes[i].type,
-    start: i === 0 ? 0 : (e.from + Math.round(e.transitionInFrames / 2)) / fps,
-    end: i === entries.length - 1 ? total : (entries[i + 1].from + Math.round(entries[i + 1].transitionInFrames / 2)) / fps,
+  // A section starts at the middle of its scene's incoming transition, or
+  // exactly on the scene's hit when it has one; it ends where the next begins.
+  const starts = entries.map((e, i) => {
+    const s = film.scenes[i];
+    if (i === 0) return 0;
+    return s.hit !== undefined ? (e.from + Math.round(s.hit * fps)) / fps : (e.from + Math.round(e.transitionInFrames / 2)) / fps;
+  });
+  const sections: Section[] = entries.map((_, i) => ({
+    type: film.scenes[i].score ?? film.scenes[i].type,
+    start: starts[i],
+    end: i === entries.length - 1 ? total : starts[i + 1],
   }));
   const beat = 60 / bpm;
   const out = buffer(total);

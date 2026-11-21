@@ -6,6 +6,7 @@ import { FPS } from './engine/timing';
 import { Film } from './film/Film';
 import { filmSchema, type FilmSpec } from './film/schema';
 import disiplin from './films/disiplin.json';
+import havuz from './films/havuz.json';
 import karaAntrenman from './films/kara-antrenman.json';
 import { composeFilm } from './story/compose';
 
@@ -18,6 +19,7 @@ const fromSpec: CalculateMetadataFunction<FilmSpec> = ({ props }) => {
 const disiplinFilm = filmSchema.parse(disiplin);
 /** Uses photos from public/private/ (git-ignored: people's photos never go to the public repo). */
 const karaAntrenmanFilm = filmSchema.parse(karaAntrenman);
+const havuzFilm = filmSchema.parse(havuz);
 
 /** Same story, written by the composer from a brief in "minimal" mode. */
 const composed = composeFilm({
@@ -62,6 +64,17 @@ export const Root: React.FC = () => (
       defaultProps={karaAntrenmanFilm}
       calculateMetadata={fromSpec}
       durationInFrames={computeTimeline(karaAntrenmanFilm, FPS).totalFrames}
+      fps={FPS}
+      width={FORMATS.vertical.width}
+      height={FORMATS.vertical.height}
+    />
+    <Composition
+      id="Havuz"
+      component={Film}
+      schema={filmSchema}
+      defaultProps={havuzFilm}
+      calculateMetadata={fromSpec}
+      durationInFrames={computeTimeline(havuzFilm, FPS).totalFrames}
       fps={FPS}
       width={FORMATS.vertical.width}
       height={FORMATS.vertical.height}

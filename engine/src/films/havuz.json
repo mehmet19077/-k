@@ -1,0 +1,113 @@
+{
+  "title": "Havuz — hazırlıktan suya",
+  "mode": "sports",
+  "style": "dark-cinematic-sports-editorial",
+  "music": { "src": "audio/havuz-score.wav", "volume": 0.85, "fadeIn": 0.3, "fadeOut": 1.0 },
+  "finish": { "grain": 0.06, "vignette": 0.55 },
+  "scenes": [
+    {
+      "id": "hazirlik",
+      "type": "video",
+      "score": "hook",
+      "duration": 4.0,
+      "src": "private/cloud/IMG_3539.mp4",
+      "from": 0.6,
+      "fadeIn": 0.6,
+      "kicker": "Non Stop · havuz",
+      "title": "Her şey\nhazırlıkla başlar.",
+      "titlePosition": "top",
+      "titleAt": 0.7,
+      "voice": { "text": "Her şey hazırlıkla başlar.", "at": 0.8 },
+      "sound": [{ "src": "sfx/glint.wav", "at": 0.3, "volume": 0.35 }]
+    },
+    {
+      "id": "odak",
+      "type": "video",
+      "score": "movement",
+      "duration": 3.6,
+      "transition": { "type": "dissolve", "duration": 0.5 },
+      "src": "private/cloud/IMG_3539.mp4",
+      "from": 20.8,
+      "title": "Önce odak.",
+      "titlePosition": "bottom",
+      "titleAt": 0.6,
+      "voice": { "text": "Önce odak.", "at": 0.5 }
+    },
+    {
+      "id": "blok",
+      "type": "video",
+      "score": "editorial",
+      "duration": 3.1,
+      "transition": { "type": "cut", "duration": 0 },
+      "src": "private/cloud/IMG_3540.mp4",
+      "from": 1.8,
+      "push": 1.12,
+      "title": "Sonra\nbir nefes.",
+      "titlePosition": "top",
+      "titleAt": 0.35,
+      "voice": { "text": "Sonra bir nefes.", "at": 0.4 }
+    },
+    {
+      "id": "dalis",
+      "type": "video",
+      "score": "impact",
+      "duration": 4.0,
+      "transition": { "type": "cut", "duration": 0 },
+      "src": "private/cloud/IMG_3540.mp4",
+      "from": 4.9,
+      "rate": 0.5,
+      "push": 1.06,
+      "hit": 2.1,
+      "hitWord": "Şimdi.",
+      "sound": [
+        { "src": "sfx/whoosh.wav", "at": 0.25, "volume": 0.55 },
+        { "src": "sfx/riser.wav", "at": 0.2, "volume": 0.7 },
+        { "src": "sfx/impact.wav", "at": 2.1, "volume": 1 }
+      ]
+    },
+    {
+      "id": "kulac",
+      "type": "video",
+      "score": "movement",
+      "duration": 4.0,
+      "transition": { "type": "whip", "duration": 0.35, "direction": "left" },
+      "src": "private/cloud/IMG_3536.mp4",
+      "from": 1.0,
+      "title": "Kulaç kulaç.",
+      "titlePosition": "bottom",
+      "titleAt": 0.6,
+      "voice": { "text": "Kulaç kulaç.", "at": 0.6 },
+      "sound": [{ "src": "sfx/whoosh.wav", "at": -0.05, "volume": 0.6 }]
+    },
+    {
+      "id": "ileri",
+      "type": "video",
+      "score": "statement",
+      "duration": 4.0,
+      "transition": { "type": "dissolve", "duration": 0.6 },
+      "src": "private/cloud/IMG_3532.mp4",
+      "from": 0.8,
+      "rate": 0.75,
+      "title": "Her gün\nbiraz daha ileri.",
+      "titlePosition": "top",
+      "titleAt": 0.6,
+      "voice": { "text": "Her gün, biraz daha ileri.", "at": 0.6 }
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "duration": 4.55,
+      "transition": { "type": "dissolve", "duration": 0.8 },
+      "logo": "brand/logo.png",
+      "logoSize": 540,
+      "wordmark": "Non Stop · Spor Kulübü",
+      "tagline": "Her gün. Durmadan.",
+      "fadeOut": 0.9,
+      "voice": { "text": "Non Stop Spor Kulübü. Her gün, durmadan.", "at": 0.9 },
+      "sound": [
+        { "src": "sfx/sub.wav", "at": 0.25, "volume": 0.6 },
+        { "src": "sfx/shimmer.wav", "at": 1.6, "volume": 0.4 }
+      ]
+    }
+  ]
+}

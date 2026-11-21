@@ -8,8 +8,8 @@ import { animate, poseStyle } from '../engine/motion/motion';
 import { ease } from '../engine/motion/easing';
 import { sceneBase } from '../engine/scene/schema';
 import { useLayout } from '../engine/scene/layout';
-import { Text } from '../engine/type/Text';
 import { color, depth, font } from '../engine/tokens';
+import { Headline } from './parts/Headline';
 
 export const photoSchema = z.object({
   ...sceneBase,
@@ -38,21 +38,6 @@ export const PhotoScene: React.FC<z.infer<typeof photoSchema>> = (props) =>
   props.mode === 'full' ? <FullPlate {...props} /> : <Print {...props} />;
 
 const grade: React.CSSProperties = { filter: 'contrast(1.08) saturate(0.82) brightness(0.92)' };
-
-const Title: React.FC<{ kicker?: string; title: string; at: number; exitAt: number; align?: 'left' | 'center' }> = ({ kicker, title, at, exitAt, align = 'left' }) => {
-  const { unit } = useLayout();
-  return (
-    <>
-      {kicker ? (
-        <>
-          <Text text={kicker} size="kicker" weight={600} tracking="whisper" color={color.caustic} move="Rise" at={at - 0.25} exit={{ at: exitAt }} align={align} upper />
-          <div style={{ height: 26 * unit }} />
-        </>
-      ) : null}
-      <Text text={title} size={100} move="Reveal" split="words" stagger={0.12} at={at} exit={{ at: exitAt }} align={align} />
-    </>
-  );
-};
 
 const FullPlate: React.FC<z.infer<typeof photoSchema>> = ({ src, focus, kicker, title, titlePosition }) => {
   const L = useLayout();
@@ -91,7 +76,7 @@ const FullPlate: React.FC<z.infer<typeof photoSchema>> = ({ src, focus, kicker, 
         />
       </AbsoluteFill>
       <div style={L.at(L.margin, textTop, w - L.margin * 2)}>
-        <Title kicker={kicker} title={title} at={0.7} exitAt={exitAt} />
+        <Headline kicker={kicker} title={title} at={0.7} exitAt={exitAt} size={100} />
       </div>
     </AbsoluteFill>
   );
@@ -142,7 +127,7 @@ const Print: React.FC<z.infer<typeof photoSchema>> = ({ src, size, kicker, title
         </DepthLayer>
         <DepthLayer z={depth.type}>
           <div style={L.at(L.margin, h * (portrait ? 0.11 : 0.06), w - L.margin * 2)}>
-            <Title kicker={kicker} title={title} at={1.0} exitAt={exitAt} />
+            <Headline kicker={kicker} title={title} at={1.0} exitAt={exitAt} size={100} />
           </div>
         </DepthLayer>
       </Stage>
