@@ -1,0 +1,54 @@
+{
+  "baslik": "24 Kasım Öğretmenler Günü",
+  "dosya_adi": "NonStop_Ogretmenler_Gunu",
+  "sure": 16,
+  "bitis": true,
+  "altyazi": [],
+  "sahneler": [
+    {
+      "tip": "medya",
+      "yerlesim": "tam",
+      "bolum": "24 KASIM",
+      "bas": 0,
+      "son": 4.2,
+      "kaynak": "havuz_dalis.mp4",
+      "manset": ["İlk kulacımızda", "*yanımızdaydınız.*"],
+      "ust": "ÖĞRETMENLER GÜNÜ",
+      "manset_an": 0.3
+    },
+    {
+      "tip": "adimlar",
+      "bolum": "TEŞEKKÜRLER",
+      "bas": 4.2,
+      "son": 10.4,
+      "manset": ["Havuzda bize", "*hayatı* öğrettiniz."],
+      "ust": "ANTRENÖRLERİMİZ, ÖĞRETMENLERİMİZ",
+      "adimlar": [
+        {"baslik": "Suya güvenmeyi", "aciklama": "Korkuyu cesarete çevirmeyi", "an": 5.4},
+        {"baslik": "Doğru nefes almayı", "aciklama": "Sakin kalmayı, ritmi bulmayı", "an": 6.4},
+        {"baslik": "Pes etmemeyi", "aciklama": "Bir tur daha, durmadan", "an": 7.4},
+        {"baslik": "Takım olmayı", "aciklama": "Birlikte daha güçlü olmayı", "an": 8.4}
+      ],
+      "vurgu": {"yazi": "Emeğiniz her kulaçta.", "an": 9.4}
+    },
+    {
+      "tip": "kapanis",
+      "bas": 10.4,
+      "son": 16,
+      "manset": ["Öğretmenler Günü", "*kutlu olsun!*"],
+      "manset_an": 10.6,
+      "logo_an": 11.4,
+      "slogan": "SPOR HERKES İÇİN",
+      "slogan_an": 12.1,
+      "cagri": "Teşekkürler, hocam!",
+      "cagri_an": 12.8
+    }
+  ],
+  "kapak": {
+    "etiket": "24 KASIM",
+    "manset": ["Teşekkürler", "*hocam!*"],
+    "alt": "Öğretmenler Günü kutlu olsun!",
+    "buton": "Tüm öğretmenlerimize ▶",
+    "arka_gorsel": "kapak_arka.jpg"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "historyId": "668794e0-afbe-49c3-a270-41b041b0fd12",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "index.html": {
+      "hash": "af0056762fa3a4dd812e7665738be42c84c541bf0e6199773576293911e0abd7",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/af/af0056762fa3a4dd812e7665738be42c84c541bf0e6199773576293911e0abd7"
+    },
+    "marka/bitis_16x9.mp4": {
+      "hash": "c3913a385ea998842ee0656f95122b5bc8e9b44a71bc7dc84e6bccd0e33d0414",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/c3/c3913a385ea998842ee0656f95122b5bc8e9b44a71bc7dc84e6bccd0e33d0414"
+    },
+    "marka/bitis_1x1.mp4": {
+      "hash": "4d34879701d0a5d9972a142def61a486390d00faa4f70dea1f38281b7764dc07",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/4d/4d34879701d0a5d9972a142def61a486390d00faa4f70dea1f38281b7764dc07"
+    },
+    "marka/bitis_9x16.mp4": {
+      "hash": "d6ddca958a1fd2523fcf15e1547605e75fa86b405b814a8c243e08f5d3f39d3c",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/d6/d6ddca958a1fd2523fcf15e1547605e75fa86b405b814a8c243e08f5d3f39d3c"
+    },
+    "marka/fonts/poppins-latin-400-normal.woff2": {
+      "hash": "7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/7d/7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f"
+    },
+    "marka/fonts/poppins-latin-500-normal.woff2": {
+      "hash": "cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/cd/cd36de204aca2d5fa263a731f7c20009b5e3d754ba1f1e03c33e93a48f3e7446"
+    },
+    "marka/fonts/poppins-latin-600-normal.woff2": {
+      "hash": "f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/f4/f4e80d9dfd374d02989b87a27b5ed4cb78fbb177c27f1478e9a8b0afb7513149"
+    },
+    "marka/fonts/poppins-latin-700-normal.woff2": {
+      "hash": "9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/93/9338e65fc077355c7a87ae0d64cc101e23b9bf8ad78ae65f0f319c857311b526"
+    },
+    "marka/fonts/poppins-latin-800-normal.woff2": {
+      "hash": "60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/60/60bf0aba6526436f3930c58c12047687fbb6bff4dd180cce4613458ed3439ea2"
+    },
+    "marka/fonts/poppins-latin-ext-400-normal.woff2": {
+      "hash": "a526dac26fcc645d428764b07fd6ae2ad3399129b75c22c8e149278157291189",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/a5/a526dac26fcc645d428764b07fd6ae2ad3399129b75c22c8e149278157291189"
+    },
+    "marka/fonts/poppins-latin-ext-500-normal.woff2": {
+      "hash": "75cd1c2bbd47db72c1a7a720e764c7672a95bdae7033c570d549ac88c9add234",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/75/75cd1c2bbd47db72c1a7a720e764c7672a95bdae7033c570d549ac88c9add234"
+    },
+    "marka/fonts/poppins-latin-ext-600-normal.woff2": {
+      "hash": "26fd27fb6bb1dc4c64a687124cc328a5ed13d89155dbfcd218eda64a45835174",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/26/26fd27fb6bb1dc4c64a687124cc328a5ed13d89155dbfcd218eda64a45835174"
+    },
+    "marka/fonts/poppins-latin-ext-700-normal.woff2": {
+      "hash": "3d52320b7513a9e20df42e02b61709b91a5c2c2a25708225c664eb4639f3b0fd",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/3d/3d52320b7513a9e20df42e02b61709b91a5c2c2a25708225c664eb4639f3b0fd"
+    },
+    "marka/fonts/poppins-latin-ext-800-normal.woff2": {
+      "hash": "9bf9d6226d07c80b9959aacc55cf2c768e9e20d1787942efc11432d7c137040b",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/9b/9bf9d6226d07c80b9959aacc55cf2c768e9e20d1787942efc11432d7c137040b"
+    },
+    "marka/gsap.min.js": {
+      "hash": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/92/92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    "marka/logo.png": {
+      "hash": "cc349daea8f44e7e23745227aa361036f9f7663e037adb844b73798f7426beaa",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/cc/cc349daea8f44e7e23745227aa361036f9f7663e037adb844b73798f7426beaa"
+    },
+    "marka/stil.css": {
+      "hash": "3d2fd83e632fe11034f12e1c1e1f55b5016c68fd3c6b992ed328536b4205bfab",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/3d/3d2fd83e632fe11034f12e1c1e1f55b5016c68fd3c6b992ed328536b4205bfab"
+    },
+    "meta.json": {
+      "hash": "e3ee466f55e1ce241210e00a62bdef145d9e66f45f74326bb73fe356dd6967fe",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/e3/e3ee466f55e1ce241210e00a62bdef145d9e66f45f74326bb73fe356dd6967fe"
+    },
+    "package.json": {
+      "hash": "0f472db0728cd0013ad1b0bb60429e22f44a63774296fd726013af5a114c983c",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/0f/0f472db0728cd0013ad1b0bb60429e22f44a63774296fd726013af5a114c983c"
+    },
+    "medya/havuz_dalis.mp4": {
+      "hash": "ca0b5f873ef792cc56508c55cd4bc698e64b9789c166c126af8c20a31f14e600",
+      "content": "/root/.cache/hyperframes/history/668794e0-afbe-49c3-a270-41b041b0fd12/blobs/ca/ca0b5f873ef792cc56508c55cd4bc698e64b9789c166c126af8c20a31f14e600"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "3980e3e2-323b-45f5-a0d8-9bdf871fcaa5",
+      "completedAt": 1795435168845,
+      "output": "/home/user/-k/sablon/icerik/ogretmenler-gunu/cikti/NonStop_Ogretmenler_Gunu.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
